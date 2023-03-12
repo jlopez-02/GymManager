@@ -10,8 +10,8 @@
         <title>GymManager</title>
 
         <!--Styles-->
-        <link rel="stylesheet" href="../styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
-        <link rel="stylesheet" href="../styles/css/root.css"/> <!-- Main CSS -->
+        <link rel="stylesheet" href="app/styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
+        <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
     </head>
     <body>
         <div>
@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="nav_button_container">
-                                <a href="#" class="nav_button">Register</a>
+                                <a href="index.php?action=register" class="nav_button">Register</a>
                             </div>
                             
                         </ul>
@@ -49,6 +49,11 @@
 
                 </nav>
             </header>
+            
+            <main>
+                <?php print $view; ?>
+            </main>
+            
         </div>
 
 
