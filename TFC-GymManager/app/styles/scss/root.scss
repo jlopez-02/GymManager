@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap');
+
+
+@mixin flex_between(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin glassmorphism_03(){
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(20px);
+}
+
+@mixin glassmorphism_06(){
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(20px);
+}
+
+$lightblue: rgba(59, 134, 219, 0.329);
+$lightblue_dark: rgb(18, 93, 214);
+
+body{
+    
+    background-image: url(../../assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    backdrop-filter: blur(3px);
+    
+}
+
+#root_header{
+
+
+    & > *{
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    nav{
+        
+        padding: 2%;
+        @include flex_between();
+        
+        .app_logo{
+            color: white;
+            
+            font-size: 4rem;
+            font-weight: bolder;
+            margin-right: 50px;
+            animation: breathing 5s ease-out infinite normal;
+            transition: 0.5s all;
+        }
+
+        #nav_menu{
+
+            #nav_list{
+
+                @include flex_between();
+                margin-right: 50px;
+                
+                .nav_link{
+                    
+                    font-size: 2rem;
+                    color: white;
+                    margin-right: 50px;
+                    transition: font-size 0.5s, color 0.2s;
+
+                    &:hover{
+                        font-size: 3rem;
+                        color: rgb(251, 255, 0);
+                    }
+                }
+
+                .nav_button_container{
+
+                    font-size: 2rem;
+                    margin-right: 30px;
+
+                    .nav_button{
+
+                        @include glassmorphism_03();
+                        color: white;
+                        border: 1px solid white;
+                        border-radius: 2px;
+                        padding: 10px;
+                        transition: 0.5s all;
+
+                        &:hover{
+                            font-size: 2.4rem;
+                            @include glassmorphism_06();
+                        } 
+                    }
+                }    
+            }
+        }
+    }
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@keyframes breathing {
+    0% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    25% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    60% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap");
+body {
+  background-image: url(../../assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  backdrop-filter: blur(3px);
+}
+
+#root_header > * {
+  font-family: "Open Sans", sans-serif;
+}
+#root_header nav {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#root_header nav .app_logo {
+  color: white;
+  font-size: 4rem;
+  font-weight: bolder;
+  margin-right: 50px;
+  animation: breathing 5s ease-out infinite normal;
+  transition: 0.5s all;
+}
+#root_header nav #nav_menu #nav_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 50px;
+}
+#root_header nav #nav_menu #nav_list .nav_link {
+  font-size: 2rem;
+  color: white;
+  margin-right: 50px;
+  transition: font-size 0.5s, color 0.2s;
+}
+#root_header nav #nav_menu #nav_list .nav_link:hover {
+  font-size: 3rem;
+  color: rgb(251, 255, 0);
+}
+#root_header nav #nav_menu #nav_list .nav_button_container {
+  font-size: 2rem;
+  margin-right: 30px;
+}
+#root_header nav #nav_menu #nav_list .nav_button_container .nav_button {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 10px;
+  transition: 0.5s all;
+}
+#root_header nav #nav_menu #nav_list .nav_button_container .nav_button:hover {
+  font-size: 2.4rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+/*# sourceMappingURL=root.css.map */
