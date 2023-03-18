@@ -2,7 +2,20 @@
 
 session_start();
 
+
+//UTILITY
+require 'app/util/db_conf.php';
+require 'app/util/db_connection.php';
+require 'app/util/error_message.php';
+
+//CONTROLLERS
 require 'app/controllers/MainController.php';
+
+//CLASSES
+require 'app/models/User/User.php';
+require 'app/models/User/UserDAO.php';
+
+
 
 $routes = array(
     "home" => array("controller" => "MainController", "method" => "home", "public" => true),

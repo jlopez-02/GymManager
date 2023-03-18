@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
     </head>
     <body>
-        <div>
+        <div id="root">
             <header id="root_header">
                 <nav id="nav_container">
                     <a href="#" class="app_logo">
@@ -24,28 +24,30 @@
                     <div id="nav_menu">
                         <ul id="nav_list">
                             <li class="nav_item">
-                                <a href="#" class="nav_link">Home</a>
+                                <a href="#" class="nav_link">Inicio</a>
                             </li>
                             <li class="nav_item">
-                                <a href="#" class="nav_link">Plans</a>
+                                <a href="#" class="nav_link">Noticias</a>
                             </li>
                             <li class="nav_item">
-                                <a href="#" class="nav_link">About</a>
+                                <a href="#" class="nav_link">Precios</a>
                             </li>
                             <li class="nav_item">
-                                <a href="#" class="nav_link">Contact</a>
+                                <a href="#" class="nav_link">Contacto</a>
                             </li>
-
-                            <div class="nav_button_container">
-                                <a href="#" class="nav_button">Login</a>
-                            </div>
-
-                            <div class="nav_button_container">
-                                <a href="index.php?action=register" class="nav_button">Register</a>
-                            </div>
-                            
                         </ul>
                     </div>
+
+                    <div id="nav_buttons">
+                        <div class="nav_button_container">
+                            <a href="#" class="nav_button">Login</a>
+                        </div>
+
+                        <div class="nav_button_container">
+                            <a href="index.php?action=register" class="nav_button">Register</a>
+                        </div>
+                    </div>
+                    
 
                 </nav>
             </header>
@@ -55,8 +57,5 @@
             </main>
             
         </div>
-
-
-
     </body>
 </html>

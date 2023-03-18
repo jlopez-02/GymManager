@@ -5,21 +5,28 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100vh;
 }
-
-#root_header > * {
+body > * {
   font-family: "Open Sans", sans-serif;
 }
+
+main {
+  margin-top: 50px;
+}
+
 #root_header nav {
+  width: 100%;
+  height: 100px;
   padding: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 #root_header nav .app_logo {
+  font-size: 3em;
   color: white;
-  font-size: 4rem;
   font-weight: bolder;
   margin-right: 50px;
   animation: breathing 5s ease-out infinite normal;
@@ -32,39 +39,137 @@ body {
   margin-right: 50px;
 }
 #root_header nav #nav_menu #nav_list .nav_link {
-  font-size: 2rem;
   color: white;
   margin-right: 50px;
   transition: font-size 0.5s, color 0.2s;
+  font-size: 2em;
 }
 #root_header nav #nav_menu #nav_list .nav_link:hover {
-  font-size: 3rem;
   color: rgb(251, 255, 0);
+  font-size: 2.5em;
 }
-#root_header nav #nav_menu #nav_list .nav_button_container {
-  font-size: 2rem;
+#root_header nav #nav_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#root_header nav #nav_buttons .nav_button_container {
   margin-right: 30px;
 }
-#root_header nav #nav_menu #nav_list .nav_button_container .nav_button {
+#root_header nav #nav_buttons .nav_button_container .nav_button {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
   color: white;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 2px;
   padding: 10px;
   transition: 0.5s all;
+  font-size: 2em;
 }
-#root_header nav #nav_menu #nav_list .nav_button_container .nav_button:hover {
-  font-size: 2.4rem;
+#root_header nav #nav_buttons .nav_button_container .nav_button:hover {
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
+  font-size: 2.5em;
 }
 
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+#register_form_container_main {
+  background-color: rgba(255, 255, 255, 0.959);
+  margin: 0 auto;
+  width: 80%;
+  padding: 30px;
+}
+#register_form_container_main h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: temblor 1s infinite;
+}
+#register_form_container_main #register_error_container {
+  padding: 20px;
+}
+#register_form_container_main #register_error_container .error_container {
+  padding: 20px;
+  border: 2px solid rgb(255, 0, 38);
+  width: max-content;
+}
+#register_form_container_main #register_error_container .error_container h3 {
+  color: red;
+}
+
+#register_form_container {
+  padding: 2%;
+  padding-top: 50px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+#register_form_container .nav_sub_button {
+  width: 40%;
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  color: black;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 10px;
+  transition: 0.5s font-size, 0.8s background-color ease-in, 0.8s color ease-out;
+  font-size: 2em;
+}
+#register_form_container .nav_sub_button:hover {
+  background-color: #198754;
+  color: white;
+  font-size: 2.5em;
+}
+#register_form_container #register_form_layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+}
+#register_form_container #register_form_layout .form_box {
+  position: relative;
+}
+#register_form_container #register_form_layout .form_box .form_label {
+  color: black;
+  margin-right: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: -15px;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform 0.5s, color 0.3s;
+}
+#register_form_container #register_form_layout .form_box .form_input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #706c6c;
+  border-bottom: 1px solid #706c6c;
+}
+#register_form_container #register_form_layout .form_box .form_line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #3866f2;
+  transform: scale(0);
+  transform: left bottom;
+}
+#register_form_container #register_form_layout .form_box .form_input:focus + .form_label,
+#register_form_container #register_form_layout .form_box .form_input:not(:placeholder-shown) + .form_label {
+  transform: translateY(-12px) scale(0.7);
+  transform-origin: left top;
+  color: #3866f2;
+}
+#register_form_container #register_form_layout .form_box .form_input:focus ~ .form_line,
+#register_form_container #register_form_layout .form_box .form_input:not(:placeholder-shown) ~ .form_line {
+  transform: scale(1);
+}
+
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -85,6 +190,17 @@ body {
     -webkit-transform: scale(0.9);
     -ms-transform: scale(0.9);
     transform: scale(0.9);
+  }
+}
+@keyframes temblor {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
