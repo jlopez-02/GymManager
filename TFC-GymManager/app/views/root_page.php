@@ -11,7 +11,8 @@
 
         <!--Styles-->
         <link rel="stylesheet" href="app/styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
-        <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
+        <link rel="stylesheet" href="app/styles/css/normalize.css"/>
+        <link rel="stylesheet" href="app/styles/css/root2.css"/> <!-- Main CSS -->
     </head>
     <body>
         <div id="root">
