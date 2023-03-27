@@ -9,6 +9,9 @@
         <meta charset="UTF-8">
         <title>GymManager</title>
 
+        <!--CDN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!--Styles-->
         <link rel="stylesheet" href="app/styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
         <link rel="stylesheet" href="app/styles/css/normalize.css"/>
@@ -18,9 +21,11 @@
         <div id="root">
             <header id="root_header">
                 <nav id="nav_container">
-                    <a href="#" class="app_logo">
-                        GymManager
-                    </a>
+                    <div id="logo-container">
+                        <a href="#" class="app_logo">
+                            GymManager
+                        </a>
+                    </div>
 
                     <div id="nav_menu">
                         <ul id="nav_list">
@@ -47,6 +52,8 @@
                         <div class="nav_button_container">
                             <a href="index.php?action=register" class="nav_button">Register</a>
                         </div>
+
+                        <div id="menu-icon"><i class="fa-solid fa-bars"></i></div>
                     </div>
                     
 
