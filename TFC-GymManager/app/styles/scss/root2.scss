@@ -5,16 +5,25 @@ $text-color: #fff;
 $main-color: #29fd53;
 $fuente: 'Open Sans', sans-serif;
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body{
   min-height: 100vh;
+  
   background-color: $bg-color;
   font-family: $fuente;
 
-  & *{
+  header *{
     color: $text-color;
   }
   
 }
+
+
 
 header nav{
   position: sticky;
@@ -49,10 +58,10 @@ header nav{
       padding: 5px 0;
       margin: 0px 30px;
       transition: all .5s ease;
+    }
 
-      &:hover{
-        color: $main-color;
-      }
+    a:hover{
+      color: $main-color;
     }
 
 
@@ -83,7 +92,7 @@ header nav{
 }
 
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   #nav_list{
     padding: 14px 2%;
     transition: .2s;
@@ -96,39 +105,44 @@ header nav{
    
 }
 
-@media (max-width: 1090px) {
+@media screen and (max-width: 1090px) {
 
   #menu-icon i{
     display: block !important;
   }
 
 
-  #nav_list{
-    position: absolute;
-    top: 100%;
+  header nav #nav_list{
+    position: absolute !important;
+    top: -1000%;
     right: 2%;
     width: 270px;
-    height: 29vh;
+    height: max-content;
     background-color: #29fd53;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 10px;
     transition: all .5s ease;
-
-    a:hover{
-      color: red;
-    }
+    
 
     a{
       display: block;
-      margin: 12px 0;
+      margin: 18px 0 !important;
       padding: 0px 25px;
       transition: all .5s ease;
 
-      
+      &:hover{
+        color: $text-color !important;
+        transform: translateY(10px);
+      }
 
     }
+
+    &.open{
+      top: 100%;
+    }
+
 
     
 

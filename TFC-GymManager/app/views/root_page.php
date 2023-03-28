@@ -11,6 +11,7 @@
 
         <!--CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
         <!--Styles-->
         <link rel="stylesheet" href="app/styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
@@ -66,4 +67,6 @@
             
         </div>
     </body>
+
+    <script src="app/scripts/res_navbar.js"></script>
 </html>

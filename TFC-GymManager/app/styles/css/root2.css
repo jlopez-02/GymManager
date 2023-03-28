@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   background-color: #222327;
   font-family: "Open Sans", sans-serif;
 }
-body * {
+body header * {
   color: #fff;
 }
 
@@ -60,7 +66,7 @@ header nav #nav_buttons #menu-icon i {
   display: none;
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   #nav_list {
     padding: 14px 2%;
     transition: 0.2s;
@@ -70,16 +76,16 @@ header nav #nav_buttons #menu-icon i {
     margin: 0px 20px;
   }
 }
-@media (max-width: 1090px) {
+@media screen and (max-width: 1090px) {
   #menu-icon i {
     display: block !important;
   }
-  #nav_list {
-    position: absolute;
-    top: 100%;
+  header nav #nav_list {
+    position: absolute !important;
+    top: -1000%;
     right: 2%;
     width: 270px;
-    height: 29vh;
+    height: max-content;
     background-color: #29fd53;
     display: flex;
     flex-direction: column;
@@ -87,14 +93,18 @@ header nav #nav_buttons #menu-icon i {
     border-radius: 10px;
     transition: all 0.5s ease;
   }
-  #nav_list a:hover {
-    color: red;
-  }
-  #nav_list a {
+  header nav #nav_list a {
     display: block;
-    margin: 12px 0;
+    margin: 18px 0 !important;
     padding: 0px 25px;
     transition: all 0.5s ease;
+  }
+  header nav #nav_list a:hover {
+    color: #fff !important;
+    transform: translateY(10px);
+  }
+  header nav #nav_list.open {
+    top: 100%;
   }
 }
 
