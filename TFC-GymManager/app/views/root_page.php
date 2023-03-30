@@ -47,7 +47,7 @@
 
                     <div id="nav_buttons">
                         <div class="nav_button_container">
-                            <a href="#" class="nav_button">Login</a>
+                            <a href="#" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
                         </div>
 
                         <div class="nav_button_container">
@@ -62,6 +62,7 @@
             </header>
             
             <main>
+                
                 <?php print $view; ?>
             </main>
             

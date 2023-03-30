@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<div style="background: white">
+<div>
     
     <h1>HOLA</h1>
     

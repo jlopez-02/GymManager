@@ -1,0 +1,159 @@
+header nav{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .5s ease;
+  
+    .logo-container{
+      display: flex;
+      align-items: center;
+    }
+  
+    .app_logo{
+      display: inline-block;
+      font-size: 2.3rem;
+      font-weight: 600;
+      margin-right: 3px;
+      transition: all 0.5s ;
+      animation: breathing 5s ease-out infinite normal;
+      padding: 5px;
+      &:hover{
+        color: $main-color;
+      }
+    }
+  
+    #nav_list{
+      display: flex;
+      a{
+        display: inline-block;
+        font-size: 1.3rem;
+        font-weight: 400;
+        padding: 5px 0;
+        margin: 0px 30px;
+        transition: all .5s ease;
+  
+        &:hover{
+          
+          color: $main-color;
+          transform: translateY(5px);
+        }
+      }
+    }
+  
+    #nav_buttons{
+      display: flex;
+      align-items: center;
+  
+      a{
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 550;
+        margin-right: 25px;
+        margin-left: 10px;
+        transition: all .5s ease;
+  
+        &:hover{
+          color: $main-color;
+          transform: translateY(5px);
+        }
+  
+        i{
+          color: $main-color;
+        }
+      }
+  
+      #menu-icon{
+        i {
+          font-size: 35px;
+          cursor: pointer;
+          z-index: 10001;
+          display: none;
+        }
+      }
+  
+      .nav_button_container:hover{
+        display: flex;
+      }
+    }
+  }
+  
+  main{
+    background-color: transparent;
+    color: whitesmoke;
+  }
+  
+  @media screen and (max-width: 1385px) {
+    #login-logo{
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    #nav_list{
+      padding: 14px 2%;
+      transition: .2s;
+  
+      a{
+        padding: 5px 0;
+        margin: 0px 20px;
+      }
+    }
+     
+  }
+  
+  @media screen and (max-width: 1150px) {
+  
+    #login-logo{
+      display: inline-block !important;
+    }
+  
+    #menu-icon i{
+      display: block !important;
+      
+      &.clicked{
+        color: $main-color;
+      }
+    }
+  
+  
+    header nav #nav_list{
+      position: absolute !important;
+      top: -100vh;
+      right: 2%;
+      width: 270px;
+      height: max-content;
+      background-color: $main-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 10px;
+      transition: all .5s ease;
+  
+      a{
+        display: block;
+        margin: 18px 0 !important;
+        padding: 0px 25px;
+        transition: all .5s ease;
+  
+        &:hover{
+          color: $text-color !important;
+        }
+  
+      }
+  
+      &.open{
+        top: 100%;
+        
+      }
+  
+      
+    }
+     
+  }

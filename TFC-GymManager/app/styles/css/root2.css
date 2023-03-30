@@ -1,19 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  background-color: #222327;
-  font-family: "Open Sans", sans-serif;
-}
-body header * {
-  color: #fff;
-}
-
 header nav {
   position: sticky;
   width: 100%;
@@ -32,38 +17,50 @@ header nav .logo-container {
   align-items: center;
 }
 header nav .app_logo {
-  font-size: 1.8rem;
+  display: inline-block;
+  font-size: 2.3rem;
   font-weight: 600;
   margin-right: 3px;
-  animation: breathing 5s ease-out infinite normal;
   transition: all 0.5s;
+  animation: breathing 5s ease-out infinite normal;
+  padding: 5px;
 }
 header nav .app_logo:hover {
-  color: #29fd53;
+  color: #8c38ff;
 }
 header nav #nav_list {
   display: flex;
 }
 header nav #nav_list a {
-  font-size: 1.2rem;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 400;
   padding: 5px 0;
   margin: 0px 30px;
   transition: all 0.5s ease;
 }
 header nav #nav_list a:hover {
-  color: #29fd53;
-  transform: scale(0.5);
+  color: #8c38ff;
+  transform: translateY(5px);
 }
 header nav #nav_buttons {
   display: flex;
   align-items: center;
 }
 header nav #nav_buttons a {
-  font-size: 1.2rem;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 550;
   margin-right: 25px;
   margin-left: 10px;
+  transition: all 0.5s ease;
+}
+header nav #nav_buttons a:hover {
+  color: #8c38ff;
+  transform: translateY(5px);
+}
+header nav #nav_buttons a i {
+  color: #8c38ff;
 }
 header nav #nav_buttons #menu-icon i {
   font-size: 35px;
@@ -71,7 +68,20 @@ header nav #nav_buttons #menu-icon i {
   z-index: 10001;
   display: none;
 }
+header nav #nav_buttons .nav_button_container:hover {
+  display: flex;
+}
 
+main {
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 1385px) {
+  #login-logo {
+    display: none;
+  }
+}
 @media screen and (max-width: 1280px) {
   #nav_list {
     padding: 14px 2%;
@@ -82,23 +92,28 @@ header nav #nav_buttons #menu-icon i {
     margin: 0px 20px;
   }
 }
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 1150px) {
+  #login-logo {
+    display: inline-block !important;
+  }
   #menu-icon i {
     display: block !important;
   }
+  #menu-icon i.clicked {
+    color: #8c38ff;
+  }
   header nav #nav_list {
-    position: fixed !important;
-    top: 10vh;
-    right: -100%;
+    position: absolute !important;
+    top: -100vh;
+    right: 2%;
     width: 270px;
     height: max-content;
-    background-color: #29fd53;
+    background-color: #8c38ff;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 10px;
     transition: all 0.5s ease;
-    z-index: -1;
   }
   header nav #nav_list a {
     display: block;
@@ -108,10 +123,9 @@ header nav #nav_buttons #menu-icon i {
   }
   header nav #nav_list a:hover {
     color: #fff !important;
-    transform: translateY(10px);
   }
   header nav #nav_list.open {
-    right: 1%;
+    top: 100%;
   }
 }
 @keyframes breathing {
@@ -135,6 +149,31 @@ header nav #nav_buttons #menu-icon i {
     -ms-transform: scale(0.9);
     transform: scale(0.9);
   }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #222327;
+  font-family: "Open Sans", sans-serif;
+}
+body * {
+  color: #fff;
+}
+
+main {
+  margin: 0 auto;
+  width: 95%;
+  height: 500px;
+  border: 2px solid wheat;
+}
+main * {
+  color: black;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=root2.css.map */
