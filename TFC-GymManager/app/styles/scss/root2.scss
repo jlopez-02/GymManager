@@ -13,7 +13,6 @@ $fuente: 'Open Sans', sans-serif;
 
 body{
   min-height: 100vh;
-  
   background-color: $bg-color;
   font-family: $fuente;
 
@@ -22,8 +21,6 @@ body{
   }
   
 }
-
-
 
 header nav{
   position: sticky;
@@ -47,6 +44,12 @@ header nav{
     font-size: 1.8rem;
     font-weight: 600;
     margin-right: 3px;
+    animation: breathing 5s ease-out infinite normal;
+    transition: all 0.5s ;
+
+    &:hover{
+      color: $main-color;
+    }
   }
 
   #nav_list{
@@ -58,11 +61,15 @@ header nav{
       padding: 5px 0;
       margin: 0px 30px;
       transition: all .5s ease;
+
+      &:hover{
+        color: $main-color;
+        transform: scale(0.5);
+      }
+
     }
 
-    a:hover{
-      color: $main-color;
-    }
+    
 
 
   }
@@ -113,18 +120,18 @@ header nav{
 
 
   header nav #nav_list{
-    position: absolute !important;
-    top: -1000%;
-    right: 2%;
+    position: fixed !important;
+    top: 10vh;
+    right: -100%;
     width: 270px;
     height: max-content;
-    background-color: #29fd53;
+    background-color: $main-color;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 10px;
     transition: all .5s ease;
-    
+    z-index: -1;
 
     a{
       display: block;
@@ -140,13 +147,34 @@ header nav{
     }
 
     &.open{
-      top: 100%;
+      right: 1%;
     }
-
-
-    
-
-
   }
    
 }
+
+@keyframes breathing {
+    0% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    25% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    60% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }

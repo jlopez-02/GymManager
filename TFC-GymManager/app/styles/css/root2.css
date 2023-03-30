@@ -35,6 +35,11 @@ header nav .app_logo {
   font-size: 1.8rem;
   font-weight: 600;
   margin-right: 3px;
+  animation: breathing 5s ease-out infinite normal;
+  transition: all 0.5s;
+}
+header nav .app_logo:hover {
+  color: #29fd53;
 }
 header nav #nav_list {
   display: flex;
@@ -48,6 +53,7 @@ header nav #nav_list a {
 }
 header nav #nav_list a:hover {
   color: #29fd53;
+  transform: scale(0.5);
 }
 header nav #nav_buttons {
   display: flex;
@@ -81,9 +87,9 @@ header nav #nav_buttons #menu-icon i {
     display: block !important;
   }
   header nav #nav_list {
-    position: absolute !important;
-    top: -1000%;
-    right: 2%;
+    position: fixed !important;
+    top: 10vh;
+    right: -100%;
     width: 270px;
     height: max-content;
     background-color: #29fd53;
@@ -92,6 +98,7 @@ header nav #nav_buttons #menu-icon i {
     justify-content: flex-start;
     border-radius: 10px;
     transition: all 0.5s ease;
+    z-index: -1;
   }
   header nav #nav_list a {
     display: block;
@@ -104,7 +111,29 @@ header nav #nav_buttons #menu-icon i {
     transform: translateY(10px);
   }
   header nav #nav_list.open {
-    top: 100%;
+    right: 1%;
+  }
+}
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
   }
 }
 
