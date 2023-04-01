@@ -1,6 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&family=Poppins&display=swap');
 $bg-color: #222327;
 $text-color: #fff;
-$main-color: #8c38ff;
-$fuente: 'Open Sans', sans-serif;
+//$main-color: #8c38ff;
+$main-color: #4fff38;
+$fuente: 'Poppings', sans-serif;
+
+@mixin typing_anim_conf(){
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+}

@@ -6,11 +6,13 @@ ob_start();
 
 <div id="main_page_container">
     
+    <h1 class="welcome_title">S2Fitness</h1>
+    <p class="welcome_sub_title">Tomelloso - Ciudad Real</p>
+
     <section class="image_galery">
-        <img src="app/assets/images/monster1.jpg">
-        <img src="app/assets/images/monster2.jpg">
-        <img src="app/assets/images/monster3.jpg">
-        <img src="app/assets/images/monster4.jpg">
+        <img src="app/assets/images/stock1.webp">
+        <img src="app/assets/images/stock2.webp">
+        <img src="app/assets/images/stock3.jpg">
     </section>
     
 </div>

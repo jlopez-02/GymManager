@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&family=Poppins&display=swap");
 header nav {
   position: sticky;
   width: 100%;
@@ -26,7 +26,7 @@ header nav .app_logo {
   padding: 5px;
 }
 header nav .app_logo:hover {
-  color: #8c38ff;
+  color: #4fff38;
 }
 header nav #nav_list {
   display: flex;
@@ -40,7 +40,7 @@ header nav #nav_list a {
   transition: all 0.5s ease;
 }
 header nav #nav_list a:hover {
-  color: #8c38ff;
+  color: #4fff38;
   transform: translateY(5px);
 }
 header nav #nav_buttons {
@@ -54,15 +54,15 @@ header nav #nav_buttons a {
   margin-right: 25px;
   margin-left: 10px;
   transition: all 0.5s ease;
-  border: 2px solid #8c38ff;
+  border: 2px solid #4fff38;
   padding: 10px;
 }
 header nav #nav_buttons a:hover {
-  color: #8c38ff;
+  color: #4fff38;
   transform: translateY(5px);
 }
 header nav #nav_buttons a i {
-  color: #8c38ff;
+  color: #4fff38;
 }
 header nav #nav_buttons #menu-icon i {
   font-size: 35px;
@@ -97,7 +97,7 @@ header nav #nav_buttons .nav_button_container:hover {
     display: block !important;
   }
   #menu-icon i.clicked {
-    color: #8c38ff;
+    color: #4fff38;
   }
   header nav #nav_list {
     position: absolute !important;
@@ -105,7 +105,7 @@ header nav #nav_buttons .nav_button_container:hover {
     right: 2%;
     width: 270px;
     height: max-content;
-    background-color: #8c38ff;
+    background-color: #4fff38;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -147,6 +147,32 @@ header nav #nav_buttons .nav_button_container:hover {
     transform: scale(0.9);
   }
 }
+.blur-in {
+  animation: blur-in 0.4s linear both;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.typing {
+  animation: typing 3.5s steps(100, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -156,7 +182,7 @@ header nav #nav_buttons .nav_button_container:hover {
 body {
   min-height: 100vh;
   background-color: #222327;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppings", sans-serif;
 }
 body * {
   color: #fff;
@@ -165,24 +191,44 @@ body * {
 main {
   margin: 0 auto;
   width: 95%;
-  height: 500px;
-  border: 2px solid wheat;
+  height: min-content;
 }
 main * {
-  color: black;
+  color: #fff;
   background-color: transparent;
 }
 
 #main_page_container {
   width: 100%;
   padding: 50px;
+  text-align: center;
+}
+#main_page_container .welcome_title {
+  width: 100%;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+}
+#main_page_container p {
+  margin-top: 10px;
+  color: #4fff38;
+  font-size: 1.3rem;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
 }
 #main_page_container .image_galery {
   display: flex;
   width: 100%;
-  height: 300px;
+  height: 600px;
   padding: 50px;
-  transform: skew(-10deg);
+  transform: skew(-7deg);
 }
 #main_page_container .image_galery img {
   width: 0;

@@ -7,7 +7,7 @@
     </configuration>
     <head>
         <meta charset="UTF-8">
-        <title>GymManager</title>
+        <title>S2Fitness</title>
 
         <!--CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,6 +17,11 @@
         <link rel="stylesheet" href="app/styles/css/reset.css"/> <!-- Reduce Browser inconsistencies-->
         <link rel="stylesheet" href="app/styles/css/normalize.css"/>
         <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
+
+        <!--Scripts-->
+
+        <script src="app/scripts/main_page.js"></script>
+
     </head>
     <body>
         <div id="root">
@@ -24,7 +29,7 @@
                 <nav id="nav_container">
                     <div id="logo-container">
                         <a href="#" class="app_logo">
-                            GymManager
+                            S2Fitness
                         </a>
                     </div>
 
