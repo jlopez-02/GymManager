@@ -4,9 +4,14 @@ ob_start();
 
 ?>
 
-<div>
+<div id="main_page_container">
     
-    <h1>HOLA</h1>
+    <section class="image_galery">
+        <img src="app/assets/images/monster1.jpg">
+        <img src="app/assets/images/monster2.jpg">
+        <img src="app/assets/images/monster3.jpg">
+        <img src="app/assets/images/monster4.jpg">
+    </section>
     
 </div>
 
