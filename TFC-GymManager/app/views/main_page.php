@@ -24,7 +24,7 @@ ob_start();
         <h1>¿Quienes Somos?</h1>
         <img src="app/assets/images/s2fitness.png">
         <hr>
-        <p>S2Fitness es mucho más que solo un centro deportivo, es un espacio donde disfrutar de tu tiempo, de tus amigos y de todo lo que te hace sentir bien mientras consigues tus objetivos. Y para darte un motivo más también tenemos promociones especiales.</p>
+        <p id="web_description">S2Fitness es mucho más que solo un centro deportivo, es un espacio donde disfrutar de tu tiempo, de tus amigos y de todo lo que te hace sentir bien mientras consigues tus objetivos. Y para darte un motivo más también tenemos promociones especiales.</p>
         
     </section>
 

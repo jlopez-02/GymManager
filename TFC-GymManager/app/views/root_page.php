@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <configuration>
         <system.webServer>
             <caching enabled="false" enableKernelCache="false" /> <!-- This one -->
@@ -11,7 +11,6 @@
 
         <!--CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         
@@ -24,7 +23,7 @@
         <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
 
         <!--Scripts-->
-
+        <script src="app/scripts/register_form.js"></script>
         <script src="app/scripts/main_page.js"></script>
 
     </head>

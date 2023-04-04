@@ -4,6 +4,7 @@ $(document).ready(function () {
     galery_hover();
     initialize_slider();
     
+    
 });
 
 
@@ -22,6 +23,7 @@ function animated_title(title_delay){
         $(".hover_text").css("opacity", 1);
         $(".hover_text").addClass("blur-in");
     }, title_delay + 1000);
+
 
     
 }

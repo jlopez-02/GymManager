@@ -45,6 +45,7 @@
   animation: typing 3.5s steps(100, end);
 }
 
+
 @keyframes typing {
   from {
     width: 0;
@@ -54,4 +55,11 @@
   }
 }
 
-
+@keyframes shaking{
+  0%  { transform:  translateY(0);
+  }
+  50% { transform: translateY(-5px);
+  }
+  100%{ transform: translateY(0);
+  } 
+}
