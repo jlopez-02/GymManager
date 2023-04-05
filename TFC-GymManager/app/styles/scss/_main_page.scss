@@ -119,3 +119,53 @@
   padding-bottom: 300px;
 
 }
+
+@media screen and (max-width: 520px) {
+  #main_page_container {
+    
+    .welcome_title{
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+  
+    p{
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  
+    .hover_text{
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  #web_description_page{
+
+    h1{
+      font-size: 2.2rem !important;
+      font-weight: 500 !important;
+    }
+
+    p{
+      width: 60%;
+      color: $text-color;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      padding-top: 20px;
+      padding-bottom: 100px;
+    }
+  }
+
+  #showcase_container{
+    h1{
+      font-size: 2.2rem !important;
+      font-weight: 500 !important;
+    }    
+  }
+
+  .swiper{
+    width: 80% !important;
+    transform: skew(0deg) !important;
+  }
+
+}

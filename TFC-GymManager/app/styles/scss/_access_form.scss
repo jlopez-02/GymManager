@@ -1,8 +1,8 @@
-#register_form_container_layout {
+.form_container_layout {
     
     
 
-  #register_form_container_main {
+  .form_container_main {
 
     background-color: $bg-secondary-color;
     padding: 40px;
@@ -15,12 +15,12 @@
         color: $main-color;
     }
     
-    #register_form_container{
+    .form_container{
 
 
-        #register_form{
+        .access_form{
             
-            #register_form_layout{
+            .form_layout{
 
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -127,7 +127,7 @@
         
     }
     
-    #register_error_container{
+    .error_container_layout{
         margin: 0 auto;
         margin-block: 30px;
         padding: 10px;
@@ -155,4 +155,10 @@
 
   }
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 700px) {
+    .form_layout{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 }

@@ -153,3 +153,21 @@ header nav{
     }
      
   }
+
+  
+
+  @media screen and (max-width: 500px) {
+    #login-logo{
+      display: none !important;
+    }
+
+    #nav_buttons{
+      display: flex;
+      align-items: center;
+      
+      a{
+        font-size: 1.2rem !important;
+        font-weight: 400 !important;
+      }
+    }
+  }

@@ -111,6 +111,62 @@ class MainController {
         }
     }
     
+    function login(){
+        $username = "";
+        $password = "";
+        
+        $error = false;
+        
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+            $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+            
+            $USERDAO = new UserDAO(db_connection::connect());
+            
+            $login_user = new User();
+            $login_user = $USERDAO->user_search_by_username($username);
+            
+            if(!$login_user){
+                error_message::save_message("El usuario es incorrecto");
+                $error = true;
+            }
+            
+            if(!password_verify($password, $login_user->getPassword())){
+                error_message::save_message("La contraseña no es correcta");
+                $error = true;
+            }
+            
+            
+                $_SESSION['username'] = $login_user->getUsername();
+                $_SESSION['user_id'] = $login_user->getId();
+                
+                $uid = sha1(time() + rand()) . md5(time());
+                
+                $login_user->setUid($uid);
+                $USERDAO->update_uid($login_user);
+                
+                setcookie("uid", $uid, time()+20*24*60*60);
+                
+                error_message::save_message($message);
+                
+                header("Location: index.php");
+                die();
+            
+            
+        }else{
+            require 'app/views/login_form.php';
+        }
+    }
+    
+    function logout() {
+        
+        session_destroy();
+        setcookie("uid","",0);
+        unset($_SESSION['username']); 
+        header("Location: index.php");
+    }
+
+
     function home(){
         require 'app/views/main_page.php';
     }

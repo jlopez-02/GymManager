@@ -27,10 +27,10 @@ function toggle_password() {
 function error_box_toggle() {
 
     if ($('.error_container').is(':empty')) {
-        $('#register_error_container').hide();  
+        $('.error_container_layout').hide();  
     }
 
-    if($.trim($("#register_error_container").html())==''){
+    if($.trim($(".error_container_layout").html())==''){
           
     }
     

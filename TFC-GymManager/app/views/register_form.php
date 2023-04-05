@@ -4,23 +4,23 @@ ob_start();
 
 ?>
 
-<div id="register_form_container_layout">
-    <div id="register_form_container_main">
+<div class="form_container_layout">
+    <div class="form_container_main">
 
         <h1>Crea una cuenta y comienza tu progreso</h1>
 
 
-        <div id="register_form_container">
+        <div class="form_container">
 
 
-            <div id="register_error_container">
+            <div class="error_container">
                 <div class="error_container"><?php error_message::show_message()?></div>
                     
             </div>
 
 
-            <form id="register_form" method="post">
-                <div id="register_form_layout">
+            <form class="access_form" method="post">
+                <div class="form_layout">
                     <div class="form_box">
                         <label for="username" class="form_label">Nombre de usuario</label>
                         <input type="text" class="form_input" name="username" placeholder=" ">
@@ -101,7 +101,7 @@ ob_start();
         </div>
 
         <div class="container signin">
-            <p>Si ya dispones de una cuenta puedes iniciar sesión <a href="#">aquí</a>.</p>
+            <p>Si ya dispones de una cuenta puedes iniciar sesión <a href="index.php?action=login">aquí</a>.</p>
         </div>
     </div>
 

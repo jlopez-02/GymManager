@@ -10,7 +10,7 @@ ob_start();
         <h1 class="welcome_title">S2Fitness</h1>
         <p class="welcome_sub_title">Tomelloso - Ciudad Real</p>
 
-        <h3 class="hover_text">¡Entrena con nostros!</h3>
+        <h3 class="hover_text">¡Entrena con nosotros!</h3>
         <section class="image_galery">
             <img src="app/assets/images/stock1.webp">
             <img src="app/assets/images/stock2.webp">

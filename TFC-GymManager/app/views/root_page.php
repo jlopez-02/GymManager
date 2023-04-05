@@ -7,6 +7,7 @@
     </configuration>
     <head>
         <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>S2Fitness</title>
 
         <!--CDN-->
@@ -23,7 +24,7 @@
         <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
 
         <!--Scripts-->
-        <script src="app/scripts/register_form.js"></script>
+        <script src="app/scripts/access_form.js"></script>
         <script src="app/scripts/main_page.js"></script>
 
     </head>
@@ -49,14 +50,14 @@
                                 <a href="#" class="nav_link">Precios</a>
                             </li>
                             <li class="nav_item">
-                                <a href="#" class="nav_link">Contacto</a>
+                                <a href="index.php?action=logout" class="nav_link">Contacto</a>
                             </li>
                         </ul>
                     </div>
 
                     <div id="nav_buttons">
                         <div class="nav_button_container">
-                            <a href="#" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
+                            <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
                         </div>
 
                         <div class="nav_button_container">
@@ -69,7 +70,7 @@
 
                 </nav>
             </header>
-            
+            <div class="error_container"><?php error_message::show_message()?></div>
             <main>
                 <?php print $view; ?>
             </main>

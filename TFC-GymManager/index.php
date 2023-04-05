@@ -20,8 +20,9 @@ require 'app/models/User/UserDAO.php';
 $routes = array(
     "home" => array("controller" => "MainController", "method" => "home", "public" => true),
     "login" => array("controller" => "MainController", "method" => "login", "public" => true),
-    "logout" => array("controller" => "MainController", "method" => "logout", "public" => false),
     "register" => array("controller" => "MainController", "method" => "register", "public" => true),
+    "logout" => array("controller" => "MainController", "method" => "logout", "public" => true),
+    
 );
 
 /* PARSEO DE LA RUTA */

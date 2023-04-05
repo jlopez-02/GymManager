@@ -125,6 +125,19 @@ header nav #nav_buttons .nav_button_container:hover {
     top: 100%;
   }
 }
+@media screen and (max-width: 500px) {
+  #login-logo {
+    display: none !important;
+  }
+  #nav_buttons {
+    display: flex;
+    align-items: center;
+  }
+  #nav_buttons a {
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+  }
+}
 @keyframes breathing {
   0% {
     -webkit-transform: scale(0.9);
@@ -328,36 +341,70 @@ input[type=date]:focus::-webkit-datetime-edit {
   object-fit: cover;
 }
 
-#register_form_container_layout {
+@media screen and (max-width: 520px) {
+  #main_page_container .welcome_title {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  #main_page_container p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #main_page_container .hover_text {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #web_description_page h1 {
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+  }
+  #web_description_page p {
+    width: 60%;
+    color: #fff;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+  #showcase_container h1 {
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+  }
+  .swiper {
+    width: 80% !important;
+    transform: skew(0deg) !important;
+  }
+}
+.form_container_layout {
   margin-bottom: 30px;
 }
-#register_form_container_layout #register_form_container_main {
+.form_container_layout .form_container_main {
   background-color: #121315;
   padding: 40px;
 }
-#register_form_container_layout #register_form_container_main h1 {
+.form_container_layout .form_container_main h1 {
   font-size: 2.8rem;
   font-weight: 300;
   text-align: center;
   margin-bottom: 40px;
   color: #92b91f;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout {
+.form_container_layout .form_container_main .form_container .access_form .form_layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5em;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box {
   /* Chrome, Safari, Edge, Opera */
   /* Firefox */
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box label {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box label {
   color: #92b91f;
   font-size: 1.2rem;
   font-weight: 300;
   padding: 5px;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=text], #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=password], #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=tel], #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=date], #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=number], #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box select {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=text], .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=password], .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=tel], .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=date], .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=number], .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box select {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -368,46 +415,46 @@ input[type=date]:focus::-webkit-datetime-edit {
   font-weight: 300;
   transition: all 0.3s ease;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=text]:focus, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=password]:focus, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=tel]:focus, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=date]:focus, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=number]:focus, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box select:focus {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=text]:focus, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=password]:focus, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=tel]:focus, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=date]:focus, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=number]:focus, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box select:focus {
   background-color: #737373;
   outline: none;
   color-scheme: dark;
   transition: all 0.3s ease;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input:-webkit-autofill,
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input:-webkit-autofill:hover,
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input:-webkit-autofill:focus,
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input:-webkit-autofill:active {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input:-webkit-autofill,
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input:-webkit-autofill:hover,
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input:-webkit-autofill:focus,
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #222327 inset !important;
   -webkit-text-fill-color: #fff !important;
   background-color: #737373;
   transition: all 0.3s ease;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box ::-webkit-calendar-picker-indicator {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box ::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input::-webkit-outer-spin-button,
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input::-webkit-inner-spin-button {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input::-webkit-outer-spin-button,
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box input[type=number] {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box input[type=number] {
   appearance: textfield;
   -moz-appearance: textfield;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box .password_container {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box .password_container {
   position: relative;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box .password_container .fa-eye, #register_form_container_layout #register_form_container_main #register_form_container #register_form #register_form_layout .form_box .password_container .fa-eye-slash {
+.form_container_layout .form_container_main .form_container .access_form .form_layout .form_box .password_container .fa-eye, .form_container_layout .form_container_main .form_container .access_form .form_layout .form_box .password_container .fa-eye-slash {
   position: absolute;
   right: 4%;
   top: 28%;
   cursor: pointer;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #submit_button_container {
+.form_container_layout .form_container_main .form_container .access_form #submit_button_container {
   text-align: center;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #submit_button_container input[type=submit] {
+.form_container_layout .form_container_main .form_container .access_form #submit_button_container input[type=submit] {
   width: 80%;
   background-color: #92b91f;
   border: 2px solid #92b91f;
@@ -419,10 +466,10 @@ input[type=date]:focus::-webkit-datetime-edit {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-#register_form_container_layout #register_form_container_main #register_form_container #register_form #submit_button_container input[type=submit]:hover {
+.form_container_layout .form_container_main .form_container .access_form #submit_button_container input[type=submit]:hover {
   opacity: 1;
 }
-#register_form_container_layout #register_form_container_main #register_error_container {
+.form_container_layout .form_container_main .error_container_layout {
   margin: 0 auto;
   margin-block: 30px;
   padding: 10px;
@@ -431,19 +478,25 @@ input[type=date]:focus::-webkit-datetime-edit {
   background-color: #222327;
   border: 1px solid #92b91f;
 }
-#register_form_container_layout #register_form_container_main #register_error_container h3 {
+.form_container_layout .form_container_main .error_container_layout h3 {
   display: inline-block;
   font-weight: 600;
   margin-right: 15px;
   color: #92b91f;
 }
-#register_form_container_layout #register_form_container_main .signin {
+.form_container_layout .form_container_main .signin {
   margin-top: 30px;
   text-align: center;
 }
-#register_form_container_layout #register_form_container_main .signin a {
+.form_container_layout .form_container_main .signin a {
   color: #92b91f;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  .form_layout {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
 }
 
 /*# sourceMappingURL=root.css.map */
