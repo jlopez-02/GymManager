@@ -26,20 +26,21 @@ class UserDAO {
     }
     
     public function create_user(User $u) {
-        $sql = "INSERT INTO users (first_name, last_name, username, email, password, phone_number, gender, date_of_birth) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO users (first_name, last_name, username, email, password, phone_number, gender, date_of_birth, dni) VALUES (?,?,?,?,?,?,?,?,?)";
         if (!$stmt = $this->conn->prepare($sql)) {
             die("Error al preparar la sentencia: " . $this->conn->error);
         }
-        $first_name = $u->getFirstName();
-        $last_name = $u->getLastName();
+        $first_name = $u->getFirst_name();
+        $last_name = $u->getLast_name();
         $username = $u->getUsername();
         $email = $u->getEmail();
         $password = $u->getPassword();
-        $phone_number = $u->getPhoneNumber();
+        $phone_number = $u->getPhone_number();
         $gender = $u->getGender();
-        $date_of_birth = $u->getDateOfBirth();
+        $date_of_birth = $u->getDate_of_birth();
+        $dni = $u->getDni();
         
-        $stmt->bind_param('sssssiss', $first_name, $last_name, $username, $email, $password, $phone_number, $gender, $date_of_birth);
+        $stmt->bind_param('sssssisss', $first_name, $last_name, $username, $email, $password, $phone_number, $gender, $date_of_birth, $dni);
         $stmt->execute();
     }
 

@@ -23,6 +23,7 @@ class MainController {
             $phone_number = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
             $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
             $date_of_birth = filter_var($_POST['date_of_birth'], FILTER_SANITIZE_STRING);
+            $dni = filter_var($_POST['dni'], FILTER_SANITIZE_STRING);
             
             $error = false;
             
@@ -66,6 +67,13 @@ class MainController {
                 $error = true;
             }
             
+            if (empty($dni)) {
+                error_message::save_message("Indica tu DNI");
+                $error = true;
+            }
+            
+            
+            
             $USERDAO = new UserDAO(db_connection::connect());
             if ($USERDAO->user_search_by_email($email)) {
                 
@@ -77,14 +85,17 @@ class MainController {
                 
                 $password_encrypt = password_hash($password, PASSWORD_BCRYPT); //Password encrypt
                 
-                $new_user->setFirstName($first_name);
-                $new_user->setLastName($last_name);
+                $complete_dni = $dni . $this->calculate_dni_letter($dni);
+                
+                $new_user->setFirst_name($first_name);
+                $new_user->setLast_name($last_name);
                 $new_user->setUsername($username);
                 $new_user->setEmail($email);
                 $new_user->setPassword($password_encrypt);
-                $new_user->setPhoneNumber($phone_number);
+                $new_user->setPhone_number($phone_number);
                 $new_user->setGender($gender);
-                $new_user->setDateOfBirth($date_of_birth);
+                $new_user->setDate_of_birth($date_of_birth);
+                $new_user->setDni($complete_dni);
                 
                 $USERDAO->create_user($new_user);
                 
@@ -102,5 +113,20 @@ class MainController {
     
     function home(){
         require 'app/views/main_page.php';
+    }
+    
+    //SECONDARY FUNCTIONS
+    
+    function calculate_dni_letter($dni_number) {
+        
+        $dni_int = intval($dni_number);
+
+        
+        $dni_module = $dni_int % 23;
+
+        
+        $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
+        
+        return $letters[$dni_module];
     }
 }

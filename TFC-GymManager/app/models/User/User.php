@@ -10,118 +10,138 @@ class User {
     private $phone_number;
     private $gender;
     private $date_of_birth;
+    private $dni;
     private $image;
     private $uid;
     private $active;
     private $notes;
+    private $role;
 
     public function User(){
         
     }
     
     public function getId() {
-      return $this->id;
+        return $this->id;
     }
-  
-    public function setId($id) {
-      $this->id = $id;
+
+    public function getFirst_name() {
+        return $this->first_name;
     }
-  
-    public function getFirstName() {
-      return $this->first_name;
+
+    public function getLast_name() {
+        return $this->last_name;
     }
-  
-    public function setFirstName($first_name) {
-      $this->first_name = $first_name;
-    }
-  
-    public function getLastName() {
-      return $this->last_name;
-    }
-  
-    public function setLastName($last_name) {
-      $this->last_name = $last_name;
-    }
-  
+
     public function getUsername() {
-      return $this->username;
+        return $this->username;
     }
-  
-    public function setUsername($username) {
-      $this->username = $username;
-    }
-  
+
     public function getEmail() {
-      return $this->email;
+        return $this->email;
     }
-  
-    public function setEmail($email) {
-      $this->email = $email;
-    }
-  
+
     public function getPassword() {
-      return $this->password;
+        return $this->password;
     }
-  
-    public function setPassword($password) {
-      $this->password = $password;
+
+    public function getPhone_number() {
+        return $this->phone_number;
     }
-  
-    public function getPhoneNumber() {
-      return $this->phone_number;
-    }
-  
-    public function setPhoneNumber($phone_number) {
-      $this->phone_number = $phone_number;
-    }
-  
+
     public function getGender() {
-      return $this->gender;
+        return $this->gender;
     }
-  
-    public function setGender($gender) {
-      $this->gender = $gender;
+
+    public function getDate_of_birth() {
+        return $this->date_of_birth;
     }
-  
-    public function getDateOfBirth() {
-      return $this->date_of_birth;
+
+    public function getDni() {
+        return $this->dni;
     }
-  
-    public function setDateOfBirth($date_of_birth) {
-      $this->date_of_birth = $date_of_birth;
-    }
-  
+
     public function getImage() {
-      return $this->image;
+        return $this->image;
     }
-  
-    public function setImage($image) {
-      $this->image = $image;
-    }
-  
+
     public function getUid() {
-      return $this->uid;
+        return $this->uid;
     }
-  
-    public function setUid($uid) {
-      $this->uid = $uid;
-    }
-  
+
     public function getActive() {
-      return $this->active;
+        return $this->active;
     }
-  
-    public function setActive($active) {
-      $this->active = $active;
-    }
-  
+
     public function getNotes() {
-      return $this->notes;
+        return $this->notes;
     }
-  
-    public function setNotes($notes) {
-      $this->notes = $notes;
+
+    public function getRole() {
+        return $this->role;
     }
+
+    public function setId($id): void {
+        $this->id = $id;
+    }
+
+    public function setFirst_name($first_name): void {
+        $this->first_name = $first_name;
+    }
+
+    public function setLast_name($last_name): void {
+        $this->last_name = $last_name;
+    }
+
+    public function setUsername($username): void {
+        $this->username = $username;
+    }
+
+    public function setEmail($email): void {
+        $this->email = $email;
+    }
+
+    public function setPassword($password): void {
+        $this->password = $password;
+    }
+
+    public function setPhone_number($phone_number): void {
+        $this->phone_number = $phone_number;
+    }
+
+    public function setGender($gender): void {
+        $this->gender = $gender;
+    }
+
+    public function setDate_of_birth($date_of_birth): void {
+        $this->date_of_birth = $date_of_birth;
+    }
+
+    public function setDni($dni): void {
+        $this->dni = $dni;
+    }
+
+    public function setImage($image): void {
+        $this->image = $image;
+    }
+
+    public function setUid($uid): void {
+        $this->uid = $uid;
+    }
+
+    public function setActive($active): void {
+        $this->active = $active;
+    }
+
+    public function setNotes($notes): void {
+        $this->notes = $notes;
+    }
+
+    public function setRole($role): void {
+        $this->role = $role;
+    }
+
+
   }
 
 ?>

@@ -84,13 +84,13 @@ ob_start();
                     </div>
 
                     <div class="form_box">
-                        <label for="birthdate" class="form_label">Fecha de nacimiento</label>
+                        <label for="date_of_birth" class="form_label">Fecha de nacimiento</label>
                         <input type="date" class="form_input no-placeholder" name="date_of_birth" placeholder="" required>
                     </div>
 
                     <div class="form_box">
-                        <label for="birthdate" class="form_label">DNI (sin letra)</label>
-                        <input type="number" class="form_input" name="date_of_birth" placeholder=" ">
+                        <label for="dni" class="form_label">DNI (sin letra)</label>
+                        <input type="number" class="form_input" name="dni" placeholder=" ">
                     </div>
                 </div>
                 <div id="submit_button_container">
