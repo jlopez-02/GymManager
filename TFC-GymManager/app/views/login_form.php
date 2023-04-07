@@ -15,7 +15,6 @@ ob_start();
 
             <div class="error_container_layout">
                 <div class="error_container"><?php error_message::show_message()?></div>
-                
             </div>
 
 

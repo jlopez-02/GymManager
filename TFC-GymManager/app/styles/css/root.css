@@ -474,8 +474,7 @@ input[type=date]:focus::-webkit-datetime-edit {
   margin: 0 auto;
   margin-block: 30px;
   padding: 10px;
-  height: content;
-  width: max-content;
+  width: fit-content;
   background-color: #222327;
   border: 1px solid #92b91f;
   text-align: center;

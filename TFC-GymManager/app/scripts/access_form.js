@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $('.error_container_layout').hide();
     error_box_toggle();
     toggle_password();
 });
@@ -27,10 +26,13 @@ function toggle_password() {
 
 function error_box_toggle() {
 
-    if ($('.error_container_layout').is(':empty')) {
-        $('.error_container_layout').hide();  
+    
+    let container = document.getElementsByClassName("error_container").item(0);
+
+    if (container.childElementCount !== 0 ) {
+        $(".error_container_layout").fadeIn();
     }else{
-        $('.error_container_layout').show();  
+        $(".error_container_layout").hide();
     }
 
     
