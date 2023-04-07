@@ -24,12 +24,13 @@
         <link rel="stylesheet" href="app/styles/css/root.css"/> <!-- Main CSS -->
 
         <!--Scripts-->
+        <script src="app/scripts/popup.js"></script>
         <script src="app/scripts/access_form.js"></script>
         <script src="app/scripts/main_page.js"></script>
 
     </head>
     <body>
-        <div id="root">
+        <div id="root" >
             <header id="root_header">
                 <nav id="nav_container">
                     <div id="logo-container">
@@ -70,13 +71,21 @@
 
                 </nav>
             </header>
-            <div class="error_container"><?php error_message::show_message()?></div>
+
+            <div class="popup">
+                <div class="popup_content">
+                    <div id="popup_warning_container">
+                        <?php error_message::show_message()?>
+                    </div>
+
+                    <h5>De acuerdo</h5>
+                </div>
+            </div>
+            
             <main>
                 <?php print $view; ?>
             </main>
-
-            
-            
+                    
         </div>
     </body>
     

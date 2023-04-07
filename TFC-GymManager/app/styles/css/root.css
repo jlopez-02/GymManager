@@ -208,7 +208,8 @@ body {
   background-color: #222327;
   font-family: "Poppings", sans-serif;
 }
-body * {
+
+header * {
   color: #fff;
 }
 
@@ -474,15 +475,20 @@ input[type=date]:focus::-webkit-datetime-edit {
   margin-block: 30px;
   padding: 10px;
   height: content;
-  width: fit-content;
+  width: max-content;
   background-color: #222327;
   border: 1px solid #92b91f;
+  text-align: center;
 }
 .form_container_layout .form_container_main .error_container_layout h3 {
   display: inline-block;
+  text-align: center;
   font-weight: 600;
   margin-right: 15px;
   color: #92b91f;
+}
+.form_container_layout .form_container_main .error_container_layout h3:last-child {
+  margin-right: 0;
 }
 .form_container_layout .form_container_main .signin {
   margin-top: 30px;
@@ -497,6 +503,56 @@ input[type=date]:focus::-webkit-datetime-edit {
   .form_layout {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+}
+.blur_active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.popup .popup_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #121315;
+  border: 2px solid #92b91f;
+  color: #92b91f;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup .popup_content h3 {
+  width: 100%;
+  margin-block: 30px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.popup .popup_content h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px;
+  border: 2px solid #92b91f;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.popup .popup_content h5:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=root.css.map */

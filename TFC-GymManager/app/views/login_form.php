@@ -19,11 +19,11 @@ ob_start();
             </div>
 
 
-            <form class="access_form" method="post">
+            <form class="access_form" action="index.php?action=login" method="post">
                 <div class="form_layout" id="login_form_layout">
                     <div class="form_box">
                         <label for="username" class="form_label">Usuario</label>
-                        <input type="text" class="form_input" name="username" placeholder=" ">
+                        <input type="text" class="form_input" name="login_username" placeholder=" ">
                         
                     </div>
 
@@ -31,7 +31,7 @@ ob_start();
                         <label for="password" class="form_label">Contraseña</label>
 
                         <div class="password_container">
-                            <input type="password" class="form_input" name="password" placeholder=" " id="register_password">
+                            <input type="password" class="form_input" name="login_password" placeholder=" " id="register_password">
                             <i class="fa-solid fa-eye" id="show_register_password"></i>
                         </div>
                         

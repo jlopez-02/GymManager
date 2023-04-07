@@ -13,7 +13,7 @@ ob_start();
         <div class="form_container">
 
 
-            <div class="error_container">
+            <div class="error_container_layout">
                 <div class="error_container"><?php error_message::show_message()?></div>
                     
             </div>
@@ -85,7 +85,7 @@ ob_start();
 
                     <div class="form_box">
                         <label for="date_of_birth" class="form_label">Fecha de nacimiento</label>
-                        <input type="date" class="form_input no-placeholder" name="date_of_birth" placeholder="" required>
+                        <input type="date" class="form_input no-placeholder" name="date_of_birth" placeholder="">
                     </div>
 
                     <div class="form_box">

@@ -21,7 +21,7 @@ $routes = array(
     "home" => array("controller" => "MainController", "method" => "home", "public" => true),
     "login" => array("controller" => "MainController", "method" => "login", "public" => true),
     "register" => array("controller" => "MainController", "method" => "register", "public" => true),
-    "logout" => array("controller" => "MainController", "method" => "logout", "public" => true),
+    "logout" => array("controller" => "MainController", "method" => "logout", "public" => false),
     
 );
 
@@ -55,7 +55,7 @@ if (!isset($_GET['action'])) {
 //}
 /* CONTROL DE ACCESO MEDIANTE VARIABLES DE SESIÓN */
 if (!$routes[$action]["public"] && !isset($_SESSION['user_id'])) {
-    error_message::save_message("Login first");
+    error_message::save_message("Inicia sesión Primero");
     header("Location: index.php");
     die();
 }

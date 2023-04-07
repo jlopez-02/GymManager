@@ -132,15 +132,20 @@
         margin-block: 30px;
         padding: 10px;
         height: content;
-        width: fit-content;
+        width: max-content;
         background-color: $bg-color;
         border: 1px solid $main-color;
-
+        text-align: center;
         h3{
             display: inline-block;
+            text-align: center;
             font-weight: 600;
             margin-right: 15px;
             color: $main-color;
+
+            &:last-child{
+                margin-right: 0;
+            }
         }
     }
 
