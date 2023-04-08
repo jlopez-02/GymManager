@@ -96,6 +96,7 @@ class MainController {
                 $new_user->setGender($gender);
                 $new_user->setDate_of_birth($date_of_birth);
                 $new_user->setDni($complete_dni);
+                $new_user->setRole('user');
                 
                 $USERDAO->create_user($new_user);
                 
@@ -138,6 +139,7 @@ class MainController {
             if($error == false){
                 $_SESSION['username'] = $login_user->getUsername();
                 $_SESSION['user_id'] = $login_user->getId();
+                $_SESSION['session_user'] = $login_user;
                 
                 $uid = sha1(time() + rand()) . md5(time());
                 

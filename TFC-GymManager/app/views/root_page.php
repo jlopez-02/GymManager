@@ -41,29 +41,75 @@
 
                     <div id="nav_menu">
                         <ul id="nav_list">
-                            <li class="nav_item">
-                                <a href="index.php" class="nav_link">Inicio</a>
-                            </li>
-                            <li class="nav_item">
-                                <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
-                            </li>
-                            <li class="nav_item">
-                                <a href="#" class="nav_link">Precios</a>
-                            </li>
-                            <li class="nav_item">
-                                <a href="index.php?action=logout" class="nav_link">Contacto</a>
-                            </li>
+                            
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                             
+                                <?php
+                                    $USERDAO = new UserDAO(db_connection::connect());
+                                    
+                                    $session_user = new User();
+                                    
+                                    $session_user = $USERDAO->user_search_by_username($_SESSION['username']);
+                                    
+                                    if($session_user->getRole() == 'chief' || $session_user->getRole() == 'admin'){
+                                
+                                ?>
+                            
+                                    <li class="nav_item">
+                                        <a href="index.php" class="nav_link">Inicio</a>
+                                    </li>
+                            
+                                <?php } ?>
+                           
+                                <li class="nav_item">
+                                    <a href="index.php" class="nav_link">Inicio</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Precios</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Contacto</a>
+                                </li>
+                            
+                            <?php else: ?>
+                            
+                                <li class="nav_item">
+                                    <a href="index.php" class="nav_link">Inicio</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Precios</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a href="#" class="nav_link">Contacto</a>
+                                </li>
+                                
+                            <?php endif; ?>
+                            
                         </ul>
                     </div>
 
                     <div id="nav_buttons">
-                        <div class="nav_button_container">
-                            <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
-                        </div>
+                        <?php if(isset($_SESSION['user_id'])): ?>
+                            <div class="nav_button_container">
+                                <a href="index.php?action=logout" class="nav_button">Cerrar Sesión</a>
+                            </div>
+                        <?php else: ?>
+                            <div class="nav_button_container">
+                                <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
+                            </div>
 
-                        <div class="nav_button_container">
-                            <a href="index.php?action=register" class="nav_button">Register</a>
-                        </div>
+                            <div class="nav_button_container">
+                                <a href="index.php?action=register" class="nav_button">Register</a>
+                            </div>
+                        <?php endif; ?>
+                        
+                        
 
                         <div id="menu-icon"><i class="fa-solid fa-bars"></i></div>
                     </div>

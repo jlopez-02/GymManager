@@ -38,21 +38,21 @@ if (!isset($_GET['action'])) {
     }
 }
 
-//if (!isset($_SESSION['user_id']) && isset($_COOKIE['uid'])) {
-//    //Obtenemos el usuario de la BD
-//    $uid = filter_var($_COOKIE['uid'], FILTER_SANITIZE_STRING);
-//    $usuarioDAO = new UsuarioDAO(ConexionBD::conectar());
-//    $usuario = $usuarioDAO->obtenerPorUid($uid);
-//
-//    if (!$usuario) {
-//        header("Location: index.php");
-//    } else {
-//        //Iniciamos sesión
-//        $_SESSION['email'] = $usuario->getEmail();
-//        $_SESSION['user_id'] = $usuario->getId();
-//        
-//    }
-//}
+if (!isset($_SESSION['user_id']) && isset($_COOKIE['uid'])) {
+    
+    $uid = filter_var($_COOKIE['uid'], FILTER_SANITIZE_STRING);
+    $usuarioDAO = new UsuarioDAO(ConexionBD::conectar());
+    $usuario = $usuarioDAO->obtenerPorUid($uid);
+
+    if (!$usuario) {
+        header("Location: index.php");
+    } else {
+        //Iniciamos sesión
+        $_SESSION['email'] = $usuario->getEmail();
+        $_SESSION['user_id'] = $usuario->getId();
+        
+    }
+}
 /* CONTROL DE ACCESO MEDIANTE VARIABLES DE SESIÓN */
 if (!$routes[$action]["public"] && !isset($_SESSION['user_id'])) {
     error_message::save_message("Inicia sesión Primero");
