@@ -58,21 +58,49 @@
                                     <li class="nav_item">
                                         <a href="index.php" class="nav_link">Inicio</a>
                                     </li>
+                                    <li class="nav_item">
+                                        <a href="index.php?action=administrate" class="nav_link">Administración</a>
+                                    </li>
+                                    
+                                    <?php if($session_user->getRole() == 'chief') : ?>
+                                    
+                                        <li class="nav_item">
+                                            <a href="index.php?action=chief_control" class="nav_link">Control</a>
+                                        </li>
+                                        
+                                    <?php endif; ?>
+                                    
                             
+                                <?php } else if($session_user->getRole() == 'member'){ ?>
+                                        <li class="nav_item">
+                                            <a href="index.php" class="nav_link">Inicio</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="#" class="nav_link">Precios</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="#" class="nav_link">Contacto</a>
+                                        </li>
+                                <?php }else{ ?>
+                                        <li class="nav_item">
+                                            <a href="index.php" class="nav_link">Inicio</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="#" class="nav_link">Precios</a>
+                                        </li>
+                                        <li class="nav_item">
+                                            <a href="#" class="nav_link">Contacto</a>
+                                        </li>
                                 <?php } ?>
+                                
                            
-                                <li class="nav_item">
-                                    <a href="index.php" class="nav_link">Inicio</a>
-                                </li>
-                                <li class="nav_item">
-                                    <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
-                                </li>
-                                <li class="nav_item">
-                                    <a href="#" class="nav_link">Precios</a>
-                                </li>
-                                <li class="nav_item">
-                                    <a href="#" class="nav_link">Contacto</a>
-                                </li>
+                                
                             
                             <?php else: ?>
                             
@@ -96,9 +124,15 @@
 
                     <div id="nav_buttons">
                         <?php if(isset($_SESSION['user_id'])): ?>
+                        
+                            <div class="nav_button_container">
+                                <a href="index.php?action=my_profile" class="nav_button">Mi Perfil</a>
+                            </div>
+                        
                             <div class="nav_button_container">
                                 <a href="index.php?action=logout" class="nav_button">Cerrar Sesión</a>
                             </div>
+                        
                         <?php else: ?>
                             <div class="nav_button_container">
                                 <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>

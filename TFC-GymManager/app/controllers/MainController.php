@@ -139,7 +139,7 @@ class MainController {
             if($error == false){
                 $_SESSION['username'] = $login_user->getUsername();
                 $_SESSION['user_id'] = $login_user->getId();
-                $_SESSION['session_user'] = $login_user;
+                $_SESSION['session_user'] = serialize($login_user);
                 
                 $uid = sha1(time() + rand()) . md5(time());
                 
@@ -174,6 +174,24 @@ class MainController {
         require 'app/views/main_page.php';
     }
     
+    function administrate(){
+        require 'app/views/administration.php';
+    }
+    
+    function chief_control(){
+        require 'app/views/chief_control.php';
+    }
+    
+    function my_profile(){
+        require 'app/views/my_profile.php';
+    }
+    
+    function member_administration(){
+        
+        require 'app/views/member_administration.php'; // pass the $view variable to the admin view
+    }
+
+
     //SECONDARY FUNCTIONS
     
     function calculate_dni_letter($dni_number) {

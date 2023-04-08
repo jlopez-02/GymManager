@@ -82,6 +82,8 @@ class UserDAO {
         
         $stmt->bind_param('sssssisss', $first_name, $last_name, $username, $email, $password, $phone_number, $gender, $date_of_birth, $dni);
         $stmt->execute();
+        
+        return $stmt->insert_id;
     }
 
 }

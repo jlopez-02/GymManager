@@ -22,6 +22,10 @@ $routes = array(
     "login" => array("controller" => "MainController", "method" => "login", "public" => true),
     "register" => array("controller" => "MainController", "method" => "register", "public" => true),
     "logout" => array("controller" => "MainController", "method" => "logout", "public" => false),
+    "administrate" => array("controller" => "MainController", "method" => "administrate", "public" => false),
+    "chief_control" => array("controller" => "MainController", "method" => "chief_control", "public" => false),
+    "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false),
+    "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
     
 );
 
