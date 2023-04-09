@@ -25,6 +25,18 @@ class UserDAO {
         return $user;
     }
     
+    public function list_users() {
+        $sql = "SELECT * FROM users";
+        if (!$result = $this->conn->query($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $users_array = array();
+        while ($user = $result->fetch_object('User')) {
+            $users_array[] = $user;
+        }
+        return $users_array;
+    }
+    
     public function user_search_by_username($username) {
         $sql = "SELECT * FROM users WHERE username = ?";
         if (!$stmt = $this->conn->prepare($sql)) {

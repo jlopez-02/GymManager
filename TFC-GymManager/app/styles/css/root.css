@@ -559,6 +559,9 @@ input[type=date]:focus::-webkit-datetime-edit {
   padding: 20px;
   text-align: center;
 }
+.admin_panel_main h1 {
+  color: #92b91f;
+}
 .admin_panel_main .admin_nav_container {
   margin: 0 auto;
   width: 100%;
@@ -572,7 +575,7 @@ input[type=date]:focus::-webkit-datetime-edit {
 }
 .admin_panel_main .admin_nav_container #admin_nav_list a {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 400;
   padding: 5px 0;
   margin: 0px 30px;
@@ -581,6 +584,10 @@ input[type=date]:focus::-webkit-datetime-edit {
 .admin_panel_main .admin_nav_container #admin_nav_list a:hover {
   color: #92b91f;
   transform: translateY(5px);
+}
+
+.member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container td, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th {
+  border: 2px solid #fff;
 }
 
 /*# sourceMappingURL=root.css.map */

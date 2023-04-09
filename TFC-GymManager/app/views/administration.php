@@ -13,10 +13,10 @@ ob_start();
             <ul id="admin_nav_list">
                 
                 <li class="nav_item">
-                    <a href="index.php" class="nav_link">Miembros</a>
+                    <a href="index.php?action=administrate&subpage=member" class="nav_link">Socios</a>
                 </li>
                 <li class="nav_item">
-                    <a href="index.php" class="nav_link">Enlace 2</a>
+                    <a href="index.php?action=administrate&subpage=memberships" class="nav_link">Cuotas</a>
                 </li>
                 <li class="nav_item">
                     <a href="index.php" class="nav_link">Enlace 3</a>
@@ -27,7 +27,9 @@ ob_start();
         
         
         <div class="activity_container">
-            <?php include 'app/views/member_administration.php'; ?>
+            
+            
+            <?php include $view_admin;?>
         </div>
     </div>
     

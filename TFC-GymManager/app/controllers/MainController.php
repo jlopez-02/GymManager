@@ -175,6 +175,27 @@ class MainController {
     }
     
     function administrate(){
+        
+        if(isset($_GET['subpage'])){
+            switch($_GET['subpage']){
+
+                case 'member':
+                    
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $members = $USERDAO->list_users();
+                    
+                    $view_admin = 'app/views/member_administration.php';
+                    break;
+                case 'memberships':
+                    $view_admin = 'app/views/memberships.php';
+                    break;
+                default:
+                    $view_admin = 'app/views/member_administration.php';
+            }
+        }else{
+            $view_admin = 'app/views/member_administration.php';
+        }
+        
         require 'app/views/administration.php';
     }
     
@@ -186,10 +207,7 @@ class MainController {
         require 'app/views/my_profile.php';
     }
     
-    function member_administration(){
-        
-        require 'app/views/member_administration.php'; // pass the $view variable to the admin view
-    }
+    
 
 
     //SECONDARY FUNCTIONS
