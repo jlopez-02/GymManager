@@ -1,12 +1,24 @@
 .member_administration_panel_main{
 
+    
+
     .member_administration_panel{
+
+        background-color: $bg-color;
+        padding: 20px;
+        margin: 0 auto;
+        width: 80%;
+        
 
 
         .member_table_container{
 
-            table, td, tr,th {
-                border: 2px solid $text-color;
+            display: flex;
+            justify-content: center;
+
+            table, tr, th, td {
+                padding: 10px;
+                border: 2px solid $main-color;
             }
 
         }

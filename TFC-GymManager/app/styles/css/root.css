@@ -586,8 +586,19 @@ input[type=date]:focus::-webkit-datetime-edit {
   transform: translateY(5px);
 }
 
-.member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container td, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th {
-  border: 2px solid #fff;
+.member_administration_panel_main .member_administration_panel {
+  background-color: #222327;
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+.member_administration_panel_main .member_administration_panel .member_table_container {
+  display: flex;
+  justify-content: center;
+}
+.member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th, .member_administration_panel_main .member_administration_panel .member_table_container td {
+  padding: 10px;
+  border: 2px solid #92b91f;
 }
 
 /*# sourceMappingURL=root.css.map */

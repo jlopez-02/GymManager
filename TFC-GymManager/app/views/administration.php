@@ -27,8 +27,7 @@ ob_start();
         
         
         <div class="activity_container">
-            
-            
+
             <?php include $view_admin;?>
         </div>
     </div>

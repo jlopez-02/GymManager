@@ -193,6 +193,8 @@ class MainController {
                     $view_admin = 'app/views/member_administration.php';
             }
         }else{
+            $USERDAO = new UserDAO(db_connection::connect());
+            $members = $USERDAO->list_users();
             $view_admin = 'app/views/member_administration.php';
         }
         
