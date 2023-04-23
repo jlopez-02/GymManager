@@ -77,8 +77,8 @@ ob_start();
                     <div class="form_box">
                         <label for="gender" class="form_label">Género</label>
                         <select name="gender" class="form_input">
-                            <option value="Male">Men</option>
-                            <option value="Female">Women</option>
+                            <option value="Male">Hombre</option>
+                            <option value="Female">Mujer</option>
                         </select>
 
                     </div>

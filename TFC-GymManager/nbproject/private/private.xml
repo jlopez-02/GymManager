@@ -5,11 +5,11 @@
         <group>
             <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/views/administration.php</file>
             <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/controllers/MainController.php</file>
+            <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/models/PayPlan/PayPlanDAO.php</file>
             <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/views/memberships.php</file>
             <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/views/root_page.php</file>
             <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/views/member_administration.php</file>
-            <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/models/User/UserDAO.php</file>
-            <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/app/views/main_page.php</file>
+            <file>file:/D:/XAMPP/htdocs/GymManager/TFC-GymManager/index.php</file>
         </group>
     </open-files>
 </project-private>

@@ -14,6 +14,8 @@ require 'app/controllers/MainController.php';
 //CLASSES
 require 'app/models/User/User.php';
 require 'app/models/User/UserDAO.php';
+require 'app/models/PayPlan/PayPlan.php';
+require 'app/models/PayPlan/PayPlanDAO.php';
 
 
 
@@ -26,7 +28,6 @@ $routes = array(
     "chief_control" => array("controller" => "MainController", "method" => "chief_control", "public" => false),
     "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false),
     "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
-    
 );
 
 /* PARSEO DE LA RUTA */

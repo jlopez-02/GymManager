@@ -180,14 +180,17 @@ class MainController {
             switch($_GET['subpage']){
 
                 case 'member':
-                    
                     $USERDAO = new UserDAO(db_connection::connect());
                     $members = $USERDAO->list_users();
-                    
                     $view_admin = 'app/views/member_administration.php';
                     break;
                 case 'memberships':
+                    $PPLANSDAO = new PayPlanDAO(db_connection::connect());
+                    $plans = $PPLANSDAO->list_payplans();
                     $view_admin = 'app/views/memberships.php';
+                    break;
+                case 'new_pplan':
+                    $view_admin = $this->new_pplan();
                     break;
                 default:
                     $view_admin = 'app/views/member_administration.php';
@@ -210,7 +213,62 @@ class MainController {
     }
     
     
+    //SUB METHODS
+    
+    function new_pplan(){
+        $name = "";
+        $price = "";
+        $cycle = "";
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $new_plan = new PayPlan();
+            $name = filter_var($_POST['plan_name'], FILTER_SANITIZE_STRING);
+            $price = filter_var($_POST['plan_price'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $cycle = filter_var($_POST['plan_cycle'], FILTER_SANITIZE_NUMBER_INT);
+
+            $error = false;
+
+
+            if (empty($name)) {
+                error_message::save_message("Indica el nombre del plan");
+                $error = true;
+            }
+
+            if (empty($price)) {
+                error_message::save_message("Establece un precio");
+                $error = true;
+            }
+
+            if (empty($cycle)) {
+                error_message::save_message("Establece un ciclo de pago");
+                $error = true;
+            }
+
+
+            if ($error == false) {
+
+                $PPLANSDAO = new PayPlanDAO(db_connection::connect());
+
+                $new_plan->setName($name);
+                $new_plan->setPrice($price);
+                $new_plan->setMonthly_cycle($cycle);
+
+                $PPLANSDAO->create_payplan($new_plan);
+
+                header('Location: index.php?action=administrate&subpage=memberships');
+                die();
+            }else{
+                $view_admin = 'app/views/new_pplan.php';
+            }   
+        }else{
+            $view_admin = 'app/views/new_pplan.php';
+        }
+        
+        return $view_admin;
+    }
+    
+    
 
     //SECONDARY FUNCTIONS
     

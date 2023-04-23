@@ -55,6 +55,7 @@ header nav #nav_buttons a {
   margin-left: 10px;
   transition: all 0.5s ease;
   border: 2px solid #92b91f;
+  border-radius: 7px;
   padding: 10px;
 }
 header nav #nav_buttons a:hover {
@@ -557,10 +558,11 @@ input[type=date]:focus::-webkit-datetime-edit {
 .admin_panel_main {
   background-color: #121315;
   padding: 20px;
-  text-align: center;
+  border-radius: 7px;
 }
 .admin_panel_main h1 {
   color: #92b91f;
+  text-align: center;
 }
 .admin_panel_main .admin_nav_container {
   margin: 0 auto;
@@ -590,15 +592,164 @@ input[type=date]:focus::-webkit-datetime-edit {
   background-color: #222327;
   padding: 20px;
   margin: 0 auto;
-  width: 80%;
+  width: fit-content;
+  border-radius: 7px;
 }
 .member_administration_panel_main .member_administration_panel .member_table_container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th, .member_administration_panel_main .member_administration_panel .member_table_container td {
-  padding: 10px;
+  padding: 15px;
   border: 2px solid #92b91f;
+}
+.member_administration_panel_main .member_administration_panel .member_button_container {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.member_administration_panel_main .member_administration_panel .member_button_container a {
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+}
+.member_administration_panel_main .member_administration_panel .member_button_container a:hover {
+  color: #92b91f;
+}
+
+.adm_form_main_container {
+  padding: 20px;
+}
+.adm_form_main_container .form_container .access_form .form_layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5em;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box label {
+  color: #92b91f;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 5px;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number], .adm_form_main_container .form_container .access_form .form_layout .form_box select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #222327;
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box select:focus {
+  background-color: #737373;
+  outline: none;
+  color-scheme: dark;
+  transition: all 0.3s ease;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box input:-webkit-autofill,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input:-webkit-autofill:hover,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input:-webkit-autofill:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #222327 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  background-color: #737373;
+  transition: all 0.3s ease;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box input::-webkit-outer-spin-button,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.adm_form_main_container .form_container .access_form .submit_button_container {
+  text-align: center;
+}
+.adm_form_main_container .form_container .access_form .submit_button_container input[type=submit] {
+  width: 80%;
+  background-color: #92b91f;
+  border: 2px solid #92b91f;
+  opacity: 0.8;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 16px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.adm_form_main_container .form_container .access_form .submit_button_container input[type=submit]:hover {
+  opacity: 1;
+}
+.adm_form_main_container .error_container_layout {
+  margin: 0 auto;
+  margin-block: 30px;
+  padding: 10px;
+  width: fit-content;
+  background-color: #222327;
+  border: 1px solid #92b91f;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.adm_form_main_container .error_container_layout h3 {
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  margin-right: 15px;
+  color: #92b91f;
+}
+.adm_form_main_container .error_container_layout h3:last-child {
+  margin-right: 0;
+}
+
+.memberships_panel_main {
+  padding: 10px;
+  padding-bottom: 50px;
+}
+.memberships_panel_main .memberships_panel {
+  background-color: #222327;
+  padding: 20px;
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 7px;
+}
+.memberships_panel_main .memberships_panel .memberships_table_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.memberships_panel_main .memberships_panel .memberships_table_container table, .memberships_panel_main .memberships_panel .memberships_table_container tr, .memberships_panel_main .memberships_panel .memberships_table_container th, .memberships_panel_main .memberships_panel .memberships_table_container td {
+  padding: 15px;
+  border: 2px solid #92b91f;
+}
+.memberships_panel_main .memberships_panel .memberships_button_container {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.memberships_panel_main .memberships_panel .memberships_button_container a {
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+.memberships_panel_main .memberships_panel .memberships_button_container a:hover {
+  color: #92b91f;
 }
 
 /*# sourceMappingURL=root.css.map */

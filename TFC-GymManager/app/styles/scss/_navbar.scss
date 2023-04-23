@@ -59,6 +59,7 @@ header nav{
         margin-left: 10px;
         transition: all .5s ease;
         border: 2px solid $main-color;
+        border-radius: 7px;
         padding: 10px;
         &:hover{
           color: $main-color;
@@ -137,7 +138,7 @@ header nav{
         margin: 18px 0 !important;
         padding: 0px 25px;
         transition: all .5s ease;
-  
+        
         &:hover{
           color: $text-color !important;
         }

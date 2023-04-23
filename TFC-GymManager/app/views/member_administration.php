@@ -11,6 +11,8 @@
                     <th>Usuario</th>
                     <th>Email</th>
                     <th>Teléfono</th>
+                    <th>Estado</th>
+                    <th>Última factura</th>
                 </thead>
 
                 <tbody>
@@ -27,7 +29,16 @@
                             <td><?= $member->getUsername() ?></td>
                             <td><?= $member->getEmail()?></td>
                             <td><?= $member->getPhone_number()?></td>
-                            
+                            <?php if($member->getActive() == 0): ?>
+
+                                <td>Alta</td>
+
+                            <?php else: ?>
+
+                                <td>Baja</td>
+
+
+                            <?php endif;?>
                         </tr>
                     
                     <?php } ?>
@@ -41,6 +52,7 @@
         </div>
         
         <div class="member_button_container">
+            <a href="#">Registrar Cliente</a>
             
         </div>
         

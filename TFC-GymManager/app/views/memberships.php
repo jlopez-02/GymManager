@@ -1,15 +1,62 @@
+
 <div class="memberships_panel_main">
     <h1>Cuotas</h1>
     
-    
-    <?php
-    
-        $USERDAO = new UserDAO(db_connection::connect());
-                                    
-        $session_user = new User();
+    <div class="memberships_panel">
+        
+        <div class="memberships_table_container">
+            
+            <table>
+                <thead>
+                    <th>Plan de suscripción</th>
+                    <th>Precio</th>
+                    <th>Ciclo mensual</th>
+                    <th>Estado</th>
+                </thead>
 
-        $session_user = $USERDAO->user_search_by_username($_SESSION['username']);
-    ?>
+                <tbody>
+                    
+                    <?php
+                        for ($i = 0; $i < count($plans); $i++) {
+                            $plan = new PayPlan();
+                            $plan = $plans[$i];
+                    ?>
+                    
+                        <tr>
+                            <td><?= $plan->getName() ?></td>
+                            <td><?= $plan->getPrice() ?></td>
+                            <td><?= $plan->getMonthly_cycle() ?></td>
+                            <?php if($plan->getActive() == 0): ?>
+
+                                <td>Inactivo</td>
+
+                            <?php else: ?>
+
+                                <td>Activo</td>
+
+
+                            <?php endif;?>
+                        </tr>
+                    
+                    <?php } ?>
+
+                    <?php foreach ($plans as $plan): ?>
+                    
+                    <?php endforeach; ?>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="memberships_button_container">
+            
+            <a href="index.php?action=administrate&subpage=new_pplan">Crear nuevo plan</a>
+            
+        </div>
+        
+    </div>
     
-    <h2> <?php echo $session_user->getDni() ?></h2>
 </div>
+
+
+
