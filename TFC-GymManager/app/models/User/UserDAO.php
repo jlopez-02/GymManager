@@ -50,6 +50,20 @@ class UserDAO {
         
         return $user;
     }
+
+    public function user_search_by_uid($uid) {
+        $sql = "SELECT * FROM users WHERE uid = ?";
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $stmt->bind_param('s', $uid);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $user = $result->fetch_object('User');
+
+        return $user;
+    }
     
     public function user_search_by_dni($dni) {
         $sql = "SELECT * FROM users WHERE dni = ?";
@@ -76,6 +90,8 @@ class UserDAO {
         $stmt->bind_param('si', $uid, $id);
         $stmt->execute();
     }
+
+
     
     public function create_user(User $u) {
         $sql = "INSERT INTO users (first_name, last_name, username, email, password, phone_number, gender, date_of_birth, dni) VALUES (?,?,?,?,?,?,?,?,?)";

@@ -171,6 +171,9 @@ class MainController {
 
 
     function home(){
+        $PPLANSDAO = new PayPlanDAO(db_connection::connect());
+        $plans = $PPLANSDAO->list_active_payplans();
+        
         require 'app/views/main_page.php';
     }
     
@@ -192,6 +195,9 @@ class MainController {
                 case 'new_pplan':
                     $view_admin = $this->new_pplan();
                     break;
+                case 'edit_pplan':
+                    $view_admin = 'app/views/edit_pplan.php';
+                    break;
                 default:
                     $view_admin = 'app/views/member_administration.php';
             }
@@ -203,9 +209,28 @@ class MainController {
         
         require 'app/views/administration.php';
     }
-    
+
     function chief_control(){
         require 'app/views/chief_control.php';
+    }
+
+    function active_switch() {
+        header("Content-type: application/json; charset=utf-8");
+
+        $plan_id = filter_var($_GET['plan_id'], FILTER_SANITIZE_NUMBER_INT);
+
+        $planDAO = new PayPlanDAO(db_connection::connect());
+        if (!$payplan = $planDAO->plan_search_by_id($plan_id)) {
+            print json_encode(["changed" => false, "message" => "ERROR TRYING TO CHANGE STATE"]);
+            die();
+        }
+
+        //Borro el mensaje
+        if ($planDAO->update_state($payplan)) {
+            print json_encode(["changed" => true, "new_state" => $payplan->getActive()]);
+        } else {
+            print json_encode(["changed" => false]);
+        }
     }
     
     function my_profile(){

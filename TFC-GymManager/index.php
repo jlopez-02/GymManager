@@ -28,6 +28,7 @@ $routes = array(
     "chief_control" => array("controller" => "MainController", "method" => "chief_control", "public" => false),
     "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false),
     "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
+    "active_switch" => array("controller" => "MainController", "method" => "active_switch", "public" => false),
 );
 
 /* PARSEO DE LA RUTA */
@@ -46,15 +47,15 @@ if (!isset($_GET['action'])) {
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['uid'])) {
     
     $uid = filter_var($_COOKIE['uid'], FILTER_SANITIZE_STRING);
-    $usuarioDAO = new UsuarioDAO(ConexionBD::conectar());
-    $usuario = $usuarioDAO->obtenerPorUid($uid);
+    $userDAO = new UserDAO(db_connection::connect());
+    $user = $userDAO->user_search_by_uid($uid);
 
-    if (!$usuario) {
+    if (!$user) {
         header("Location: index.php");
     } else {
-        //Iniciamos sesión
-        $_SESSION['email'] = $usuario->getEmail();
-        $_SESSION['user_id'] = $usuario->getId();
+
+        $_SESSION['email'] = $user->getEmail();
+        $_SESSION['user_id'] = $user->getId();
         
     }
 }

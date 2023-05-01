@@ -198,6 +198,10 @@ header nav #nav_buttons .nav_button_container:hover {
     transform: translateY(0);
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -231,6 +235,30 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
 
 input[type=date]:focus::-webkit-datetime-edit {
   color: #fff !important;
+}
+
+#up_button {
+  position: fixed;
+  font-size: 2rem;
+  right: 50px;
+  bottom: 50px;
+  padding: 20px;
+  width: max-content;
+  background-color: rgb(45, 47, 51);
+  border: 2px solid #92b91f;
+  z-index: 1000;
+  transition: all 0.4s;
+  border-radius: 7px;
+  animation: breathing 3s ease-out infinite normal;
+}
+#up_button i {
+  transition: all 0.5s;
+}
+#up_button:hover {
+  background-color: rgb(161, 202, 37);
+}
+#up_button:hover i {
+  color: rgb(45, 47, 51);
 }
 
 #main_page_container {
@@ -343,6 +371,128 @@ input[type=date]:focus::-webkit-datetime-edit {
   object-fit: cover;
 }
 
+#plan_container h1 {
+  padding-top: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  animation: shaking 1s infinite;
+}
+#plan_container .slide-container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+#plan_container .slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+#plan_container .card {
+  border-radius: 25px;
+  background-color: #121315;
+}
+#plan_container .image-content,
+#plan_container .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+#plan_container .image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+#plan_container .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(45, 47, 51);
+  border-radius: 25px 25px 0 25px;
+}
+#plan_container .overlay::before,
+#plan_container .overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(45, 47, 51);
+}
+#plan_container .overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #121315;
+}
+#plan_container .card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: rgb(161, 202, 37);
+  padding: 3px;
+}
+#plan_container .card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#plan_container .name {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+#plan_container .price {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.8;
+}
+#plan_container .description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.7;
+  text-align: center;
+  white-space: pre-line;
+}
+#plan_container .button {
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #92b91f;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#plan_container .button:hover {
+  background: rgb(161, 202, 37);
+}
+#plan_container .swiper-navBtn {
+  color: #92b91f;
+  transition: color 0.3s ease;
+}
+#plan_container .swiper-navBtn:hover {
+  color: rgb(161, 202, 37);
+}
+#plan_container .swiper-navBtn::before,
+#plan_container .swiper-navBtn::after {
+  font-size: 35px;
+}
+#plan_container .swiper-button-next {
+  right: 0;
+}
+#plan_container .swiper-button-prev {
+  left: 0;
+}
+
 @media screen and (max-width: 520px) {
   #main_page_container .welcome_title {
     font-size: 2.5rem;
@@ -375,6 +525,14 @@ input[type=date]:focus::-webkit-datetime-edit {
   .swiper {
     width: 80% !important;
     transform: skew(0deg) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .slide-content {
+    margin: 0 10px;
+  }
+  .swiper-navBtn {
+    display: none;
   }
 }
 .form_container_layout {
@@ -599,10 +757,14 @@ input[type=date]:focus::-webkit-datetime-edit {
   display: flex;
   justify-content: center;
   width: 100%;
+  text-align: center;
 }
 .member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th, .member_administration_panel_main .member_administration_panel .member_table_container td {
   padding: 15px;
   border: 2px solid #92b91f;
+}
+.member_administration_panel_main .member_administration_panel .member_table_container tbody tr:hover {
+  background-color: rgb(45, 47, 51);
 }
 .member_administration_panel_main .member_administration_panel .member_button_container {
   margin-top: 40px;
@@ -614,6 +776,7 @@ input[type=date]:focus::-webkit-datetime-edit {
   padding: 10px;
   color: #fff;
   border: 2px solid #92b91f;
+  border-radius: 7px;
   transition: all 0.3s;
 }
 .member_administration_panel_main .member_administration_panel .member_button_container a:hover {
@@ -638,7 +801,12 @@ input[type=date]:focus::-webkit-datetime-edit {
   font-weight: 300;
   padding: 5px;
 }
-.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date], .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number], .adm_form_main_container .form_container .access_form .form_layout .form_box select {
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text],
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password],
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel],
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date],
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number],
+.adm_form_main_container .form_container .access_form .form_layout .form_box select {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -649,7 +817,12 @@ input[type=date]:focus::-webkit-datetime-edit {
   font-weight: 300;
   transition: all 0.3s ease;
 }
-.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number]:focus, .adm_form_main_container .form_container .access_form .form_layout .form_box select:focus {
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=text]:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=password]:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=tel]:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=date]:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box input[type=number]:focus,
+.adm_form_main_container .form_container .access_form .form_layout .form_box select:focus {
   background-color: #737373;
   outline: none;
   color-scheme: dark;
@@ -729,11 +902,25 @@ input[type=date]:focus::-webkit-datetime-edit {
 .memberships_panel_main .memberships_panel .memberships_table_container {
   display: flex;
   justify-content: center;
+  text-align: center;
   width: 100%;
 }
-.memberships_panel_main .memberships_panel .memberships_table_container table, .memberships_panel_main .memberships_panel .memberships_table_container tr, .memberships_panel_main .memberships_panel .memberships_table_container th, .memberships_panel_main .memberships_panel .memberships_table_container td {
+.memberships_panel_main .memberships_panel .memberships_table_container table,
+.memberships_panel_main .memberships_panel .memberships_table_container tr,
+.memberships_panel_main .memberships_panel .memberships_table_container th,
+.memberships_panel_main .memberships_panel .memberships_table_container td {
   padding: 15px;
   border: 2px solid #92b91f;
+}
+.memberships_panel_main .memberships_panel .memberships_table_container tbody tr:hover {
+  background-color: rgb(45, 47, 51);
+}
+.memberships_panel_main .memberships_panel .memberships_table_container .active_column {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.memberships_panel_main .memberships_panel .memberships_table_container .active_column:hover {
+  background-color: rgb(161, 202, 37);
 }
 .memberships_panel_main .memberships_panel .memberships_button_container {
   margin-top: 40px;
@@ -749,6 +936,40 @@ input[type=date]:focus::-webkit-datetime-edit {
   border-radius: 7px;
 }
 .memberships_panel_main .memberships_panel .memberships_button_container a:hover {
+  color: #92b91f;
+}
+.memberships_panel_main .lds-dual-ring {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
+}
+.memberships_panel_main .lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.memberships_panel_main .help_container {
+  margin-top: 10px;
+  text-align: center;
+}
+.memberships_panel_main .help_container p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-block: 10px;
   color: #92b91f;
 }
 

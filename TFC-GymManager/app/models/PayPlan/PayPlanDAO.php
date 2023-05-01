@@ -37,5 +37,52 @@ class PayPlanDAO {
         }
         return $pplans_array;
     }
+
+    public function list_active_payplans() {
+        $sql = "SELECT * FROM pay_plans Where active = 1";
+        if (!$result = $this->conn->query($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $pplans_array = array();
+        while ($pp = $result->fetch_object('PayPlan')) {
+            $pplans_array[] = $pp;
+        }
+        return $pplans_array;
+    }
+
+    public function plan_search_by_id($id) {
+        $sql = "SELECT * FROM pay_plans WHERE id = ?";
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $plan = $result->fetch_object('PayPlan');
+
+        return $plan;
+    }
+
+    public function update_state(PayPlan $plan) {
+
+        if($plan->getActive() == 0){
+            $sql = "UPDATE pay_plans SET active = 1 WHERE id = ?";
+        }else{
+            $sql = "UPDATE pay_plans SET active = 0 WHERE id = ?";
+        }
+
+
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $id = $plan->getId();
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        return $id;
+    }
+
+
     
 }
