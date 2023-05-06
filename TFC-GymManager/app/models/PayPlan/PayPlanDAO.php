@@ -83,6 +83,23 @@ class PayPlanDAO {
         return $id;
     }
 
+    public function update_pplan(PayPlan $plan) {
+
+        $sql = "UPDATE pay_plans SET name = ?, price = ?, monthly_cycle = ? WHERE id = ?";
+
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $name = $plan->getName();
+        $price = $plan->getPrice();
+        $monthly_cycle = $plan->getMonthly_cycle();
+        $id = $plan->getId();
+        $stmt->bind_param('siii', $name,$price,$monthly_cycle, $id);
+        $stmt->execute();
+
+        return $id;
+    }
+
 
     
 }

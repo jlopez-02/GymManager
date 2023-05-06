@@ -14,15 +14,7 @@ function init_edit_plan() {
 
 function edit_plan() {
     const url = "index.php?action=administrate&subpage=edit_pplan&plan_id=" + $(this).closest('tr').data('id');;
-    
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => {
-        
-      })
-      .catch((error) => {
-        console.error("Error: " + error);
-      });
+    window.location.href = url;
 }
 
 function init_active_plan_loader() {

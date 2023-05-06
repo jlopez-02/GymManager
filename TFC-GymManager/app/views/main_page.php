@@ -46,8 +46,8 @@ ob_start();
                 <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div style="display: none" class="swiper-button-prev"></div>
+                <div style="display: none" class="swiper-button-next"></div>
             </div>
         </div>
 

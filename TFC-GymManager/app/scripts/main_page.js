@@ -50,6 +50,9 @@ function initialize_slider() {
     },
     
     loop: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
   
     // If we need pagination
     pagination: {
@@ -58,8 +61,8 @@ function initialize_slider() {
   
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next-image',
+      prevEl: '.swiper-button-prev-image',
     },
   
   });

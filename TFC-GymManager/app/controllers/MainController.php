@@ -196,7 +196,11 @@ class MainController {
                     $view_admin = $this->new_pplan();
                     break;
                 case 'edit_pplan':
-                    $view_admin = 'app/views/edit_pplan.php';
+                    $pplan_id = filter_var($_GET['plan_id'], FILTER_SANITIZE_NUMBER_INT);
+                    $PPLANSDAO = new PayPlanDAO(db_connection::connect());
+                    $pplan = $PPLANSDAO->plan_search_by_id($pplan_id);
+
+                    $view_admin = $this->edit_pplan($pplan);
                     break;
                 default:
                     $view_admin = 'app/views/member_administration.php';
@@ -290,6 +294,53 @@ class MainController {
             $view_admin = 'app/views/new_pplan.php';
         }
         
+        return $view_admin;
+    }
+
+    function edit_pplan(PayPlan $pplan){
+        $PPLANSDAO = new PayPlanDAO(db_connection::connect());
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $name = filter_var($_POST['plan_name'], FILTER_SANITIZE_STRING);
+            $price = filter_var($_POST['plan_price'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $cycle = filter_var($_POST['plan_cycle'], FILTER_SANITIZE_NUMBER_INT);
+
+            $error = false;
+
+
+            if (empty($name)) {
+                error_message::save_message("Indica el nombre del plan");
+                $error = true;
+            }
+
+            if (empty($price)) {
+                error_message::save_message("Establece un precio");
+                $error = true;
+            }
+
+            if (empty($cycle)) {
+                error_message::save_message("Establece un ciclo de pago");
+                $error = true;
+            }
+
+
+            if ($error == false) {
+
+                $pplan->setName($name);
+                $pplan->setPrice($price);
+                $pplan->setMonthly_cycle($cycle);
+
+                $PPLANSDAO->update_pplan($pplan);
+
+                header('Location: index.php?action=administrate&subpage=memberships');
+                die();
+            }else{
+                $view_admin = 'app/views/edit_pplan.php';
+            }
+        }else{
+            $view_admin = 'app/views/edit_pplan.php';
+        }
+
         return $view_admin;
     }
     

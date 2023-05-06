@@ -1,5 +1,8 @@
 
 <div class="adm_form_main_container">
+
+    <h1>Cuotas</h1>
+
     <div class="form_container">
         <div class="error_container_layout">
             <div class="error_container"><?php error_message::show_message()?></div>
