@@ -65,6 +65,20 @@ class UserDAO {
         return $user;
     }
     
+    public function user_search_by_id($id) {
+        $sql = "SELECT * FROM users WHERE id = ?";
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $stmt->bind_param('s', $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $user = $result->fetch_object('User');
+
+        return $user;
+    }
+    
     public function user_search_by_dni($dni) {
         $sql = "SELECT * FROM users WHERE dni = ?";
         if (!$stmt = $this->conn->prepare($sql)) {

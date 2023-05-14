@@ -91,7 +91,7 @@
                                             <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="#" class="nav_link">Precios</a>
+                                            <a href="index.php#plan_container" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
                                             <a href="#" class="nav_link">Contacto</a>

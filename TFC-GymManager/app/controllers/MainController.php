@@ -218,26 +218,30 @@ class MainController {
         require 'app/views/chief_control.php';
     }
 
-    function active_switch() {
-        header("Content-type: application/json; charset=utf-8");
 
-        $plan_id = filter_var($_GET['plan_id'], FILTER_SANITIZE_NUMBER_INT);
-
-        $planDAO = new PayPlanDAO(db_connection::connect());
-        if (!$payplan = $planDAO->plan_search_by_id($plan_id)) {
-            print json_encode(["changed" => false, "message" => "ERROR TRYING TO CHANGE STATE"]);
-            die();
-        }
-
-        //Borro el mensaje
-        if ($planDAO->update_state($payplan)) {
-            print json_encode(["changed" => true, "new_state" => $payplan->getActive()]);
-        } else {
-            print json_encode(["changed" => false]);
-        }
-    }
     
     function my_profile(){
+
+        $session_user = new User();
+        $USERDAO = new UserDAO(db_connection::connect());
+        $session_user = $USERDAO->user_search_by_id($_SESSION['user_id']);
+        
+        if(isset($_GET['subpage'])){
+            switch($_GET['subpage']){
+                case 'personal_information':
+                    $view_admin = 'app/views/personal_information.php';
+                    break;
+                case 'personal_payments':
+
+                    $view_admin = 'app/views/personal_payments.php';
+                    break;
+                default:
+                    $view_admin = 'app/views/personal_information.php';
+            }
+        }else{
+            $view_admin = 'app/views/personal_information.php';
+        }
+
         require 'app/views/my_profile.php';
     }
     
@@ -347,7 +351,26 @@ class MainController {
     
 
     //SECONDARY FUNCTIONS
-    
+
+    function active_switch() {
+        header("Content-type: application/json; charset=utf-8");
+
+        $plan_id = filter_var($_GET['plan_id'], FILTER_SANITIZE_NUMBER_INT);
+
+        $planDAO = new PayPlanDAO(db_connection::connect());
+        if (!$payplan = $planDAO->plan_search_by_id($plan_id)) {
+            print json_encode(["changed" => false, "message" => "ERROR TRYING TO CHANGE STATE"]);
+            die();
+        }
+
+        //Borro el mensaje
+        if ($planDAO->update_state($payplan)) {
+            print json_encode(["changed" => true, "new_state" => $payplan->getActive()]);
+        } else {
+            print json_encode(["changed" => false]);
+        }
+    }
+
     function calculate_dni_letter($dni_number) {
         
         $dni_int = intval($dni_number);

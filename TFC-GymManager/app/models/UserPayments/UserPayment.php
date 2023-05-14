@@ -1,5 +1,5 @@
 <?php
-class UserPayments
+class UserPayment
 {
     private $id;
     private $user_id;
@@ -11,7 +11,7 @@ class UserPayments
     private $expiration_date;
     private $record_date;
 
-    public function UserPayments(){
+    public function UserPayment(){
 
     }
     

@@ -222,7 +222,6 @@ main {
   margin: 0 auto;
   width: 95%;
   height: min-content;
-  padding-bottom: 20px;
 }
 main * {
   color: #fff;
@@ -773,7 +772,6 @@ input[type=date]:focus::-webkit-datetime-edit {
   margin-bottom: 10px;
 }
 .member_administration_panel_main .member_administration_panel .member_button_container a {
-  display: inline-block;
   font-size: 1.2rem;
   padding: 10px;
   color: #fff;
@@ -783,7 +781,6 @@ input[type=date]:focus::-webkit-datetime-edit {
 }
 .member_administration_panel_main .member_administration_panel .member_button_container a:hover {
   color: #92b91f;
-  transform: translateY(5px);
 }
 
 .adm_form_main_container {
@@ -932,7 +929,6 @@ input[type=date]:focus::-webkit-datetime-edit {
   margin-bottom: 10px;
 }
 .memberships_panel_main .memberships_panel .memberships_button_container a {
-  display: inline-block;
   font-size: 1.2rem;
   padding: 10px;
   color: #fff;
@@ -942,7 +938,6 @@ input[type=date]:focus::-webkit-datetime-edit {
 }
 .memberships_panel_main .memberships_panel .memberships_button_container a:hover {
   color: #92b91f;
-  transform: translateY(5px);
 }
 .memberships_panel_main .lds-dual-ring {
   display: inline-block;
@@ -1008,62 +1003,36 @@ input[type=date]:focus::-webkit-datetime-edit {
   color: rgb(161, 202, 37);
   transform: translateY(5px);
 }
-.my_profile_panel_main .my_profile_container .my_profile_subpage_container {
-  padding-bottom: 20px;
-}
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main {
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main h1 {
-  width: 100%;
   font-size: 2rem;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_image {
-  width: 10%;
-  height: 10%;
-  padding: 10px;
-  border: 1px solid #92b91f;
-  background-color: white;
-  border-radius: 7px;
-  margin-bottom: 10px;
-}
-.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_image img {
-  width: 100%;
-  height: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
-  text-align: left;
-  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  flex-basis: 20%;
+  margin-bottom: 20px;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info label {
-  display: inline;
   padding-bottom: 5px;
-  font-size: 1.5rem;
-  color: rgb(161, 202, 37);
-  opacity: 0.8;
+  font-size: 1.3rem;
+  color: red;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info label::after {
+  content: "dada";
+  border-bottom: 1px solid rgb(161, 202, 37);
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info p {
-  display: inline;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding: 15px;
 }
-.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container h3 {
-  margin-block: 20px;
-  width: 100%;
-  font-size: 1.4rem;
-  color: #92b91f;
-  text-align: center;
-}
 
-/*# sourceMappingURL=root.css.map */
+/*# sourceMappingURL=root.cs.map */
