@@ -23,13 +23,13 @@
                             $member = $members[$i];
                     ?>
                     
-                        <tr>
+                        <tr data-id="<?= $member->getId() ?>">
                             <td><?= $member->getFirst_name()?></td>
                             <td><?= $member->getLast_name() ?></td>
                             <td><?= $member->getUsername() ?></td>
                             <td><?= $member->getEmail()?></td>
                             <td><?= $member->getPhone_number()?></td>
-                            <?php if($member->getActive() == 0): ?>
+                            <?php if($member->getActive() == 1): ?>
 
                                 <td>Alta</td>
 

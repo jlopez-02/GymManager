@@ -29,6 +29,7 @@ $routes = array(
     "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false),
     "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
     "active_switch" => array("controller" => "MainController", "method" => "active_switch", "public" => false),
+    "change_image" => array("controller" => "MainController", "method" => "change_image", "public" => false),
 );
 
 /* PARSEO DE LA RUTA */

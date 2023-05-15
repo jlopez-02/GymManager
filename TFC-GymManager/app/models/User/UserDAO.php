@@ -127,6 +127,43 @@ class UserDAO {
         
         return $stmt->insert_id;
     }
+    
+    public function update_user(User $user) {
+
+        $sql = "UPDATE users SET first_name = ?, last_name = ?, email = ?, phone_number = ?, gender = ?, date_of_birth = ?, dni = ?, notes = ? WHERE id = ?";
+
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $first_name = $user->getFirst_name();
+        $last_name = $user->getLast_name();
+        $email = $user->getEmail();
+        $phone_number = $user->getPhone_number();
+        $gender = $user->getGender();
+        $birthdate = $user->getDate_of_birth();
+        $dni = $user->getDni();
+        $notes = $user->getNotes();
+        $id = $user->getId();
+        $stmt->bind_param('sssissssi', $first_name,$last_name,$email, $phone_number, $gender, $birthdate, $dni, $notes, $id);
+        $stmt->execute();
+
+        return $id;
+    }
+    
+    public function update_image(User $user) {
+
+        $sql = "UPDATE users SET image = ? WHERE id = ?";
+        
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $image = $user->getImage();
+        $id = $user->getId();
+        $stmt->bind_param('si', $image, $id);
+        $stmt->execute();
+
+        return $id;
+    }
 
 }
 

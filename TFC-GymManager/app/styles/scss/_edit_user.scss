@@ -1,0 +1,168 @@
+.edit_user_container_main {
+
+    h1{
+        width: 100%;
+        font-size: 2rem;
+        
+        span{
+            color: $main-3rd-color;
+            font-weight: 600;
+            position: relative;
+
+            &:after {
+                content: '';
+            
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+            
+                border-width: 0 0 2px;
+                border-style: solid;
+            }
+        }
+
+        
+    }
+  .edit_user_container {
+    .user_image {
+      margin: 0 auto;
+      width: 15%;
+      height: 10%;
+      border: 1px solid $main-color;
+      background-color: $main-color;
+      margin-bottom: 50px;
+      transition: all .3s ease-in-out;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover{
+        cursor: pointer;
+        img{
+            filter: blur(1px);
+        }
+        
+      }
+    }
+
+    .edit_user_form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5em;
+      .user_info {
+        label {
+          color: $main-color;
+          font-size: 1.2rem;
+          font-weight: 300;
+          padding: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: $bg-color;
+          font-size: 1.2rem;
+          font-weight: 300;
+          transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+          background-color: #737373;
+          outline: none;
+          color-scheme: dark;
+          transition: all 0.3s ease;
+        }
+
+        textarea{
+            resize: none;
+            overflow: hidden;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px $bg-color inset !important;
+          -webkit-text-fill-color: $text-color !important;
+          background-color: #737373;
+          transition: all 0.3s ease;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+          filter: invert(1);
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+          appearance: textfield;
+          -moz-appearance: textfield;
+        }
+      }
+
+      .txtnotes{
+        grid-column: 1 / span 2;
+      }
+      .submit_edit_user_form{
+        grid-column:  span 2;
+        text-align: center;
+        input{
+            
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 10px;
+            color: $text-color;
+            border: 2px solid $main-color;
+            transition: all 0.3s;
+            border-radius: 7px;
+            cursor: pointer;
+
+            &:hover {
+                color: $main-color;
+                transform: translateY(5px);
+              }
+        }
+      }
+
+    }
+
+    
+  }
+}
+
+@media screen and (max-width: 800px) {
+    .edit_user_form{
+        grid-template-columns: repeat(1, 1fr) !important;
+
+        & > *{
+            grid-column: initial !important;
+        }
+    }
+
+    .txtnotes{
+        grid-column: initial !important;
+    }
+}

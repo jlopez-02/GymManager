@@ -766,6 +766,7 @@ input[type=date]:focus::-webkit-datetime-edit {
 }
 .member_administration_panel_main .member_administration_panel .member_table_container tbody tr:hover {
   background-color: rgb(45, 47, 51);
+  cursor: pointer;
 }
 .member_administration_panel_main .member_administration_panel .member_button_container {
   margin-top: 40px;
@@ -1028,10 +1029,8 @@ input[type=date]:focus::-webkit-datetime-edit {
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_image {
   width: 10%;
   height: 10%;
-  padding: 10px;
   border: 1px solid #92b91f;
-  background-color: white;
-  border-radius: 7px;
+  background-color: #92b91f;
   margin-bottom: 10px;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_image img {
@@ -1064,6 +1063,146 @@ input[type=date]:focus::-webkit-datetime-edit {
   font-size: 1.4rem;
   color: #92b91f;
   text-align: center;
+}
+
+.edit_user_container_main h1 {
+  width: 100%;
+  font-size: 2rem;
+}
+.edit_user_container_main h1 span {
+  color: rgb(120, 151, 26);
+  font-weight: 600;
+  position: relative;
+}
+.edit_user_container_main h1 span:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  border-width: 0 0 2px;
+  border-style: solid;
+}
+.edit_user_container_main .edit_user_container .user_image {
+  margin: 0 auto;
+  width: 15%;
+  height: 10%;
+  border: 1px solid #92b91f;
+  background-color: #92b91f;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.edit_user_container_main .edit_user_container .user_image img {
+  width: 100%;
+  height: 100%;
+}
+.edit_user_container_main .edit_user_container .user_image:hover {
+  cursor: pointer;
+}
+.edit_user_container_main .edit_user_container .user_image:hover img {
+  filter: blur(1px);
+}
+.edit_user_container_main .edit_user_container .edit_user_form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info label {
+  color: #92b91f;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 5px;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=text],
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=password],
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=tel],
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=date],
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=number],
+.edit_user_container_main .edit_user_container .edit_user_form .user_info textarea,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #222327;
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=text]:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=password]:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=tel]:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=date]:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=number]:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info textarea:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info select:focus {
+  background-color: #737373;
+  outline: none;
+  color-scheme: dark;
+  transition: all 0.3s ease;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info textarea {
+  resize: none;
+  overflow: hidden;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input:-webkit-autofill,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input:-webkit-autofill:hover,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input:-webkit-autofill:focus,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #222327 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  background-color: #737373;
+  transition: all 0.3s ease;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input::-webkit-outer-spin-button,
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .user_info input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .txtnotes {
+  grid-column: 1/span 2;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .submit_edit_user_form {
+  grid-column: span 2;
+  text-align: center;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .submit_edit_user_form input {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.edit_user_container_main .edit_user_container .edit_user_form .submit_edit_user_form input:hover {
+  color: #92b91f;
+  transform: translateY(5px);
+}
+
+@media screen and (max-width: 800px) {
+  .edit_user_form {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .edit_user_form > * {
+    grid-column: initial !important;
+  }
+  .txtnotes {
+    grid-column: initial !important;
+  }
 }
 
 /*# sourceMappingURL=root.css.map */

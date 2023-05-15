@@ -174,5 +174,6 @@
     <script src="app/scripts/main_page.js"></script>
     <script src="app/scripts/res_navbar.js"></script>
     <script src="app/scripts/ajax_methods.js"></script>
+    <script src="app/scripts/style.js"></script>
     <script src="app/scripts/swiper-bundle.min.js"></script>
 </html>

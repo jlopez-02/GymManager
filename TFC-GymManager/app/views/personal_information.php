@@ -7,7 +7,7 @@
             <?php if($session_user->getImage() == null): ?>
                 <img src="app/assets/images/error.png" title="No tienes imagen"/>
             <?php else: ?>
-                <img src="<?= $session_user->getImage() ?>" />
+                <img src="app/data/user_images/<?= $session_user->getImage() ?>" />
             <?php endif; ?>
         </div>
 

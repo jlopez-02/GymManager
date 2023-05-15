@@ -1,7 +1,35 @@
 $(document).ready(function () {
   init_active_plan_loader();
   init_edit_plan();
+  init_edit_user();
+  change_image();
 });
+
+function change_image() {
+  $("#user_image_div").click(function () {
+    $("#image_hidden_input").click();
+  });
+
+  $("#image_hidden_input").change(function () {
+    $("#image_hidden_form").submit();
+  });
+}
+
+function init_edit_user() {
+  let column_changes = document.querySelectorAll(
+    ".member_table_container table tr td"
+  );
+  for (let i = 0; i < column_changes.length; i++) {
+    column_changes[i].addEventListener("click", edit_user);
+  }
+}
+
+function edit_user() {
+  const url =
+    "index.php?action=administrate&subpage=edit_user&user_id=" +
+    $(this).closest("tr").data("id");
+  window.location.href = url;
+}
 
 function init_edit_plan() {
   let column_changes = document.querySelectorAll(
@@ -13,8 +41,10 @@ function init_edit_plan() {
 }
 
 function edit_plan() {
-    const url = "index.php?action=administrate&subpage=edit_pplan&plan_id=" + $(this).closest('tr').data('id');;
-    window.location.href = url;
+  const url =
+    "index.php?action=administrate&subpage=edit_pplan&plan_id=" +
+    $(this).closest("tr").data("id");
+  window.location.href = url;
 }
 
 function init_active_plan_loader() {
@@ -25,7 +55,8 @@ function init_active_plan_loader() {
 }
 
 function switch_state() {
-  const url = "index.php?action=active_switch&plan_id=" + this.getAttribute("data-id");
+  const url =
+    "index.php?action=active_switch&plan_id=" + this.getAttribute("data-id");
   const spinner = document.createElement("div");
   spinner.classList.add("lds-dual-ring");
   this.appendChild(spinner);

@@ -202,8 +202,18 @@ class MainController {
 
                     $view_admin = $this->edit_pplan($pplan);
                     break;
+                case 'edit_user':
+                    $user_id = filter_var($_GET['user_id'], FILTER_SANITIZE_NUMBER_INT);
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $user_to_edit = $USERDAO->user_search_by_id($user_id);
+                    
+                    $view_admin = $this->edit_user($user_to_edit);
+                    break;
                 default:
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $members = $USERDAO->list_users();
                     $view_admin = 'app/views/member_administration.php';
+                    break;
             }
         }else{
             $USERDAO = new UserDAO(db_connection::connect());
@@ -348,9 +358,117 @@ class MainController {
         return $view_admin;
     }
     
+    function edit_user(User $user_to_edit){
+        $USERDAO = new UserDAO(db_connection::connect());
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING);
+            $last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $phone_number = filter_var($_POST['phone_number'], FILTER_SANITIZE_STRING);
+            $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
+            $birthdate = filter_var($_POST['birthdate'], FILTER_SANITIZE_STRING);
+            $dni = filter_var($_POST['dni'], FILTER_SANITIZE_STRING);
+            $notes = filter_var($_POST['notes'], FILTER_SANITIZE_STRING);
+            $error = false;
+
+            
+            $complete_dni = $dni . $this->calculate_dni_letter($dni);
+
+            if (empty($first_name)) {
+                error_message::save_message("Introduce el nombre");
+                $error = true;
+            }
+            
+            if (empty($last_name)) {
+                error_message::save_message("Introduce los apellidos");
+                $error = true;
+            }
+            
+            if (empty($email)) {
+                error_message::save_message("Introduce un email");
+                $error = true;
+            }
+            
+            
+            if (empty($phone_number)) {
+                error_message::save_message("Introduce un número de telefono");
+                $error = true;
+            }
+            
+            if (empty($gender)) {
+                error_message::save_message("Indica el género");
+                $error = true;
+            }
+            
+            if (empty($birthdate)) {
+                error_message::save_message("Indica la fecha de nacimiento");
+                $error = true;
+            }
+            
+            if (empty($dni)) {
+                error_message::save_message("Indica el DNI");
+                $error = true;
+            }
+            
+            if ($error == false) {
+
+                $user_to_edit->setFirst_name($first_name);
+                $user_to_edit->setLast_name($last_name);
+                $user_to_edit->setEmail($email);
+                $user_to_edit->setPhone_number($phone_number);
+                $user_to_edit->setGender($gender);
+                $user_to_edit->setDate_of_birth($birthdate);
+                $user_to_edit->setDni($complete_dni);
+                $user_to_edit->setNotes($notes);
+
+                $USERDAO->update_user($user_to_edit);
+
+                header('Location: index.php?action=administrate&subpage=member_administration');
+                die();
+            }else{
+                $view_admin = 'app/views/selected_member.php';
+            }
+        }else{
+            $view_admin = 'app/views/selected_member.php';
+        }
+
+        return $view_admin;
+    }
+    
+    
     
 
     //SECONDARY FUNCTIONS
+    
+    function change_image(){
+        
+        $user_id = filter_var($_GET['user_id'], FILTER_SANITIZE_NUMBER_INT);
+        $USERDAO = new UserDAO(db_connection::connect());
+        $user_to_edit = $USERDAO->user_search_by_id($user_id);
+        
+        //Generamos un nombre aleatorio para la foto
+        $random_name = md5(rand());
+        //Cogemos la extensión
+        $original_name = $_FILES['image']['name'];
+        $extension = substr($original_name, strrpos($original_name, '.'));
+        $ncrypted_name = $random_name . $extension;
+
+        //y en ese caso volvemos a generar un nombre
+        while (file_exists('app/data/user_images/' . $ncrypted_name)) {
+            $random_name = md5(rand());
+            $ncrypted_name = $random_name . $extension;
+        }
+
+        //Movemomoves la foto a la carpeta donde los queramos guardar
+        move_uploaded_file($_FILES['image']['tmp_name'],
+                'app/data/user_images/' . $ncrypted_name);
+        
+        $user_to_edit->setImage($ncrypted_name);
+        $USERDAO->update_image($user_to_edit);
+
+        header("Location: index.php?action=administrate&subpage=edit_user&user_id=" . $user_id);
+    }
 
     function active_switch() {
         header("Content-type: application/json; charset=utf-8");

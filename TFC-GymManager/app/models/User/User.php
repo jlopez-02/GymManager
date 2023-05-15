@@ -141,6 +141,9 @@ class User {
         $this->role = $role;
     }
 
+    public function getDniNumber() {
+        return substr($this->dni, 0, -1);
+    }
 
   }
 
