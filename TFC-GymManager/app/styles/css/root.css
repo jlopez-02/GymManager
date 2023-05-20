@@ -238,6 +238,10 @@ input[type=date]:focus::-webkit-datetime-edit {
   color: #fff !important;
 }
 
+.active-link {
+  color: rgb(120, 151, 26);
+}
+
 #up_button {
   position: fixed;
   font-size: 2rem;
@@ -1063,6 +1067,22 @@ input[type=date]:focus::-webkit-datetime-edit {
   font-size: 1.4rem;
   color: #92b91f;
   text-align: center;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .payment_button_container {
+  text-align: center;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .payment_button_container a {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .payment_button_container a:hover {
+  color: #92b91f;
+  transform: translateY(5px);
 }
 
 .edit_user_container_main h1 {

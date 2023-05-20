@@ -77,7 +77,7 @@
         </form>
         
         <form action='index.php?action=change_image&user_id=<?= $user_to_edit->getId()?>' method="post" id="image_hidden_form" enctype="multipart/form-data">
-            <input type="file" name="image" id="image_hidden_input" accept=".jpg, .gif, .png, .webp">
+            <input style="display: none" type="file" name="image" id="image_hidden_input" accept=".jpg, .gif, .png, .webp">
         </form>
         
     </div>

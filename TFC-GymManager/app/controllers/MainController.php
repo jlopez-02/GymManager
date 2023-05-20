@@ -245,8 +245,13 @@ class MainController {
 
                     $view_admin = 'app/views/personal_payments.php';
                     break;
+                
+                case 'pay_panel':
+                    $view_admin = 'app/views/pay_panel.php';
+                    break;
                 default:
                     $view_admin = 'app/views/personal_information.php';
+                    break;
             }
         }else{
             $view_admin = 'app/views/personal_information.php';
