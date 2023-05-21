@@ -236,17 +236,21 @@ class MainController {
         $USERDAO = new UserDAO(db_connection::connect());
         $session_user = $USERDAO->user_search_by_id($_SESSION['user_id']);
         
+        
+        
         if(isset($_GET['subpage'])){
             switch($_GET['subpage']){
                 case 'personal_information':
                     $view_admin = 'app/views/personal_information.php';
                     break;
                 case 'personal_payments':
-
                     $view_admin = 'app/views/personal_payments.php';
                     break;
                 
                 case 'pay_panel':
+                    
+                    $PPLANDAO = new PayPlanDAO(db_connection::connect());
+                    $plan_list = $PPLANDAO->list_payplans();
                     $view_admin = 'app/views/pay_panel.php';
                     break;
                 default:

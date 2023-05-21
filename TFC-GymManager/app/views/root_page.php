@@ -169,8 +169,8 @@
     </body>
     
     <!--Scripts-->
-    <script src="app/scripts/popup.js"></script>
     <script src="app/scripts/access_form.js"></script>
+    <script src="app/scripts/popup.js"></script>
     <script src="app/scripts/main_page.js"></script>
     <script src="app/scripts/res_navbar.js"></script>
     <script src="app/scripts/ajax_methods.js"></script>

@@ -4,8 +4,14 @@ $(document).ready(function () {
     galery_hover();
     initialize_slider();
     initialize_card_slider();
-    
+    today_date();
 });
+
+function today_date() {
+  let today = new Date().toISOString().split('T')[0];
+  $('input[type="date"]:not(.birthdate_input)').attr('min', today);
+  
+}
 
 
 

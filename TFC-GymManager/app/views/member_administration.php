@@ -43,10 +43,6 @@
                     
                     <?php } ?>
 
-                    <?php foreach ($members as $member): ?>
-                    
-                    <?php endforeach; ?>
-
                 </tbody>
             </table>
         </div>

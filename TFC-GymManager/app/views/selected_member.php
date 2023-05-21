@@ -28,7 +28,7 @@
 
             <div class="user_info">
                 <label>Fecha de nacimiento</label>
-                <input type="date" name="birthdate" placeholder=" " value="<?= $user_to_edit->getDate_of_birth() ?>">
+                <input type="date" name="birthdate" class="birthdate_input" placeholder=" " value="<?= $user_to_edit->getDate_of_birth() ?>">
             </div>
 
             <div class="user_info">

@@ -135,3 +135,14 @@
         }
     }
 }
+
+#link_to_plans{
+    color: $main-color;
+    padding-left: 20px;
+    display: inline-block;
+    transition: 0.3s;
+    &:hover {
+        color: $main-3rd-color;
+        transform: translateY(1px);
+    }
+}

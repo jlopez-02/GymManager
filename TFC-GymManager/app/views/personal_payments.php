@@ -5,7 +5,7 @@
     <div class="personal_payments_container">
 
         <div class="payment_button_container">
-            <a href="index.php?action=my_profile&subpage=pay_panel">Pagar</a>
+            <a href="index.php?action=my_profile&subpage=pay_panel">Subscribete a un plan</a>
         </div>
         
     </div>

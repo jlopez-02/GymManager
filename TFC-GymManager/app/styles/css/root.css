@@ -1085,6 +1085,17 @@ input[type=date]:focus::-webkit-datetime-edit {
   transform: translateY(5px);
 }
 
+#link_to_plans {
+  color: #92b91f;
+  padding-left: 20px;
+  display: inline-block;
+  transition: 0.3s;
+}
+#link_to_plans:hover {
+  color: rgb(120, 151, 26);
+  transform: translateY(1px);
+}
+
 .edit_user_container_main h1 {
   width: 100%;
   font-size: 2rem;
