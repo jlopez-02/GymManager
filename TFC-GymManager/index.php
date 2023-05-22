@@ -16,7 +16,8 @@ require 'app/models/User/User.php';
 require 'app/models/User/UserDAO.php';
 require 'app/models/PayPlan/PayPlan.php';
 require 'app/models/PayPlan/PayPlanDAO.php';
-
+require 'app/models/UserPayments/UserPayment.php';
+require 'app/models/UserPayments/UserPaymentDAO.php';
 
 
 $routes = array(

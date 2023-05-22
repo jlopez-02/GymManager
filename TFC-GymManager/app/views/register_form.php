@@ -85,7 +85,7 @@ ob_start();
 
                     <div class="form_box">
                         <label for="date_of_birth" class="form_label">Fecha de nacimiento</label>
-                        <input type="date" class="form_input no-placeholder birthdate_input" name="date_of_birth" placeholder="">
+                        <input type="date" class="form_input no-placeholder birthdate_input" name="date_of_birth" placeholder="" value="<?php echo date('Y-m-d'); ?>">
                     </div>
 
                     <div class="form_box">

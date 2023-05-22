@@ -80,7 +80,7 @@ ob_start();
                                     <h3 class="price"><?= $plan->getPrice() ?>€</h3>
                                     <p class="description"><?= $plan->getMonthly_cycle() ?> meses</p>
 
-                                    <a href="#" class="button">Más información</a>
+                                    <a href="#" class="button">Subscribete</a>
                                 </div>
                             </div>
 

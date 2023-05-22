@@ -110,6 +110,7 @@
 
                     .payment_button_container {
                         text-align: center;
+
                         a {
                             display: inline-block;
                             font-size: 1.2rem;
@@ -136,13 +137,64 @@
     }
 }
 
-#link_to_plans{
+#link_to_plans {
     color: $main-color;
     padding-left: 20px;
     display: inline-block;
     transition: 0.3s;
+
     &:hover {
         color: $main-3rd-color;
         transform: translateY(1px);
+    }
+}
+
+
+#pay_window_button {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 10px;
+    color: $text-color;
+    border: 2px solid $main-color;
+    transition: all 0.3s;
+    border-radius: 7px;
+
+    &:hover {
+        color: $main-color;
+        transform: translateY(5px);
+    }
+}
+
+.finish_payment_subpage {
+    
+    padding-top: 30px;
+
+    .finish_payment_main {
+
+        .payment_info {
+            display: flex;
+            justify-content: space-evenly;
+
+            .payment_info_item {
+
+                label {
+                    display: inline;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $main-color;
+                    margin-right: 10px;
+                }
+
+                h4 {
+                    display: inline;
+                    font-size: 1.2rem;
+                }
+
+                margin-bottom: 20px;
+
+            }
+
+        }
+
     }
 }

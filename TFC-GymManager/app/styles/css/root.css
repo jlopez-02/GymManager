@@ -1096,6 +1096,42 @@ input[type=date]:focus::-webkit-datetime-edit {
   transform: translateY(1px);
 }
 
+#pay_window_button {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+#pay_window_button:hover {
+  color: #92b91f;
+  transform: translateY(5px);
+}
+
+.finish_payment_subpage {
+  padding-top: 30px;
+}
+.finish_payment_subpage .finish_payment_main .payment_info {
+  display: flex;
+  justify-content: space-evenly;
+}
+.finish_payment_subpage .finish_payment_main .payment_info .payment_info_item {
+  margin-bottom: 20px;
+}
+.finish_payment_subpage .finish_payment_main .payment_info .payment_info_item label {
+  display: inline;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #92b91f;
+  margin-right: 10px;
+}
+.finish_payment_subpage .finish_payment_main .payment_info .payment_info_item h4 {
+  display: inline;
+  font-size: 1.2rem;
+}
+
 .edit_user_container_main h1 {
   width: 100%;
   font-size: 2rem;

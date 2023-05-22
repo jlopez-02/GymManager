@@ -236,7 +236,7 @@ class MainController {
         $USERDAO = new UserDAO(db_connection::connect());
         $session_user = $USERDAO->user_search_by_id($_SESSION['user_id']);
         
-        
+        $UPAYMENTDAO = new UserPaymentDAO(db_connection::connect());
         
         if(isset($_GET['subpage'])){
             switch($_GET['subpage']){
@@ -251,7 +251,19 @@ class MainController {
                     
                     $PPLANDAO = new PayPlanDAO(db_connection::connect());
                     $plan_list = $PPLANDAO->list_payplans();
-                    $view_admin = 'app/views/pay_panel.php';
+                    $view_admin = $this->new_payment();
+                    break;
+                case 'confirm_payment':
+                    $PPLANDAO = new PayPlanDAO(db_connection::connect());
+                    $payment = new UserPayment();
+                    $plan = new PayPlan();
+
+                    $payment_id = filter_var($_GET['new_payment_id'], FILTER_SANITIZE_NUMBER_INT);
+                    $payment = $UPAYMENTDAO->payment_search_by_id($payment_id);
+                    $plan = $PPLANDAO->plan_search_by_id($payment->getPay_plan_id());
+                    $plan_name = $plan->getName();
+
+                    $view_admin = 'app/views/finish_payment.php';
                     break;
                 default:
                     $view_admin = 'app/views/personal_information.php';
@@ -266,6 +278,65 @@ class MainController {
     
     
     //SUB METHODS
+    
+    
+    
+    function new_payment(){
+        $pplan_id = "";
+        $start_date = "";
+        
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+            $pplan_id = filter_var($_POST['payplan'], FILTER_SANITIZE_STRING);
+            $start_date = filter_var($_POST['start_date'], FILTER_SANITIZE_STRING);
+
+            $error = false;
+
+
+            if (empty($pplan_id)) {
+                error_message::save_message("Escoge un plan");
+                $error = true;
+            }
+
+            if (empty($start_date)) {
+                error_message::save_message("Selecciona una fecha de inicio");
+                $error = true;
+            }
+
+
+            if ($error == false) {
+                $UPAYDAO = new UserPaymentDAO(db_connection::connect());
+                $PPLANDAO = new PayPlanDAO(db_connection::connect());
+                
+                $new_payment = new UserPayment();
+                
+                $pplan = new PayPlan();
+                $pplan = $PPLANDAO->plan_search_by_id($pplan_id);
+                $expiration_date = date('Y-m-d', strtotime("+". $pplan->getMonthly_cycle() . "months", strtotime($start_date)));
+                $price = $pplan->getPrice();
+                
+                $new_payment->setUser_id($_SESSION['user_id']);
+                $new_payment->setPay_plan_id($pplan_id);
+                $new_payment->setPayment_status(0);
+                $new_payment->setPrice($price);
+                $new_payment->setStart_date($start_date);
+                $new_payment->setExpiration_date($expiration_date);
+                $new_payment->setRecord_date(date('Y-m-d'));
+
+                $new_payment_id = $UPAYDAO->create_payment($new_payment);
+
+                header('Location: index.php?action=my_profile&subpage=confirm_payment&new_payment_id=' . $new_payment_id);
+                die();
+            }else{
+                $view_admin = 'app/views/pay_panel.php';
+            }   
+        }else{
+            $view_admin = 'app/views/pay_panel.php';
+        }
+        
+        return $view_admin;
+    }
     
     function new_pplan(){
         $name = "";
@@ -314,7 +385,7 @@ class MainController {
                 $view_admin = 'app/views/new_pplan.php';
             }   
         }else{
-            $view_admin = 'app/views/new_pplan.php';
+            $view_admin = 'app/views/pay_panel.php';
         }
         
         return $view_admin;

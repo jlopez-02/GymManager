@@ -50,6 +50,19 @@ class UserPaymentDAO
         return $stmt->insert_id;
     }
 
+    public function payment_search_by_id($id) {
+        $sql = "SELECT * FROM user_payments WHERE id = ?";
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $payment = $result->fetch_object('UserPayment');
+
+        return $payment;
+    }
 
 
 }
