@@ -39,6 +39,7 @@
 
 
                             <?php endif;?>
+                            <td></td>
                         </tr>
                     
                     <?php } ?>

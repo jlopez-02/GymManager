@@ -104,6 +104,18 @@ class UserDAO {
         $stmt->bind_param('si', $uid, $id);
         $stmt->execute();
     }
+    
+    public function update_role(User $u) {
+        $sql = "UPDATE users SET role = ? WHERE id = ?";
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $id = $u->getId();
+        $role = $u->getRole();
+        
+        $stmt->bind_param('si', $role, $id);
+        $stmt->execute();
+    }
 
 
     

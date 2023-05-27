@@ -209,6 +209,12 @@ class MainController {
                     
                     $view_admin = $this->edit_user($user_to_edit);
                     break;
+                case 'payments':
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $UPAYMENTDAO = new UserPaymentDAO(db_connection::connect());
+                    $payment_list = $UPAYMENTDAO->list_payments();
+                    $view_admin = 'app/views/all_payments.php';
+                    break;
                 default:
                     $USERDAO = new UserDAO(db_connection::connect());
                     $members = $USERDAO->list_users();
@@ -244,6 +250,8 @@ class MainController {
                     $view_admin = 'app/views/personal_information.php';
                     break;
                 case 'personal_payments':
+                    
+                    $payment_list = $UPAYMENTDAO->list_payments_by_user($_SESSION['user_id']);
                     $view_admin = 'app/views/personal_payments.php';
                     break;
                 
@@ -263,7 +271,7 @@ class MainController {
                     $plan = $PPLANDAO->plan_search_by_id($payment->getPay_plan_id());
                     $plan_name = $plan->getName();
 
-                    $view_admin = 'app/views/finish_payment.php';
+                    $view_admin = $this->confirm_payment($payment);
                     break;
                 default:
                     $view_admin = 'app/views/personal_information.php';
@@ -278,7 +286,19 @@ class MainController {
     
     
     //SUB METHODS
-    
+    function confirm_payment(UserPayment $payment){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $UPAYMENTDAO = new UserPaymentDAO(db_connection::connect());
+            $payment->setPayment_status(1);
+            $UPAYMENTDAO->update_payment_status($payment);
+            
+            header('Location: index.php?action=my_profile&subpage=personal_payments');
+        }else{
+            $view_admin = 'app/views/finish_payment.php';
+        }
+        
+        return $view_admin;
+    }
     
     
     function new_payment(){
@@ -324,7 +344,17 @@ class MainController {
                 $new_payment->setExpiration_date($expiration_date);
                 $new_payment->setRecord_date(date('Y-m-d'));
 
-                $new_payment_id = $UPAYDAO->create_payment($new_payment);
+                
+                
+                if($new_payment_id = $UPAYDAO->create_payment($new_payment)){
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $session_user = new User();
+                    $session_user = $USERDAO->user_search_by_id($_SESSION['user_id']);
+                    
+                    if(isset($session_user) && $session_user->getRole() == 'user'){
+                        $session_user->setRole('client');
+                    }
+                }
 
                 header('Location: index.php?action=my_profile&subpage=confirm_payment&new_payment_id=' . $new_payment_id);
                 die();
@@ -385,7 +415,7 @@ class MainController {
                 $view_admin = 'app/views/new_pplan.php';
             }   
         }else{
-            $view_admin = 'app/views/pay_panel.php';
+            $view_admin = 'app/views/new_pplan.php';
         }
         
         return $view_admin;

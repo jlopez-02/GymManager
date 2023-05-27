@@ -81,7 +81,7 @@
                                             <a href="#" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="#" class="nav_link">Contacto</a>
+                                            <a href="#" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php }else{ ?>
                                         <li class="nav_item">
@@ -94,7 +94,7 @@
                                             <a href="index.php#plan_container" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="#" class="nav_link">Contacto</a>
+                                            <a href="#" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php } ?>
                                 
@@ -113,7 +113,7 @@
                                     <a href="index.php#plan_container" class="nav_link">Precios</a>
                                 </li>
                                 <li class="nav_item">
-                                    <a href="#" class="nav_link">Contacto</a>
+                                    <a href="#" class="nav_link">Sobre Mi</a>
                                 </li>
                                 
                             <?php endif; ?>

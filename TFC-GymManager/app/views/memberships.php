@@ -24,7 +24,7 @@
                         <tr data-id="<?= $plan->getId() ?>">
 
                             <td><?= $plan->getName() ?></td>
-                            <td><?= $plan->getPrice() ?></td>
+                            <td><?= $plan->getPrice() ?>€</td>
                             <td><?= $plan->getMonthly_cycle() ?></td>
                             <?php if ($plan->getActive() == 0) : ?>
 

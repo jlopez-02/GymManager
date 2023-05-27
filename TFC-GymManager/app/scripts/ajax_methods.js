@@ -78,6 +78,8 @@ function switch_state() {
       console.error("Error: " + error);
     })
     .finally(() => {
-      spinner.remove();
+      setTimeout(() => {
+        spinner.remove();
+      }, 1000);
     });
 }

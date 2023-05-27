@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans:wght@600&family=Open+Sans&family=Poppins&display=swap");
 header nav {
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   right: 0;
@@ -8,7 +8,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: transparent;
+  background: rgba(34, 35, 39, 0.7);
   padding: 28px 12%;
   transition: all 0.5s ease;
 }
@@ -219,6 +219,7 @@ header * {
 }
 
 main {
+  padding-top: 100px;
   margin: 0 auto;
   width: 95%;
   height: min-content;
@@ -718,6 +719,21 @@ input[type=date]:focus::-webkit-datetime-edit {
   opacity: 0.7;
 }
 
+.chief_control_panel_main {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  transition: all 1s;
+}
+.chief_control_panel_main h1 {
+  margin-top: 100px;
+  width: 100%;
+}
+.chief_control_panel_main img {
+  max-width: 100%;
+  height: auto;
+}
+
 .admin_panel_main {
   background-color: #121315;
   padding: 20px;
@@ -736,6 +752,7 @@ input[type=date]:focus::-webkit-datetime-edit {
 .admin_panel_main .admin_nav_container #admin_nav_list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 .admin_panel_main .admin_nav_container #admin_nav_list a {
@@ -751,33 +768,62 @@ input[type=date]:focus::-webkit-datetime-edit {
   transform: translateY(5px);
 }
 
-.member_administration_panel_main .member_administration_panel {
+@media screen and (max-width: 600px) {
+  .chief_control_panel_main {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .chief_control_panel_main {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .chief_control_panel_main {
+    font-size: 1rem;
+  }
+}
+.member_administration_panel {
   background-color: #222327;
   padding: 20px;
   margin: 0 auto;
-  width: fit-content;
-  border-radius: 7px;
-}
-.member_administration_panel_main .member_administration_panel .member_table_container {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+  overflow: hidden; /* Hide the horizontal overflow */
   text-align: center;
 }
-.member_administration_panel_main .member_administration_panel .member_table_container table, .member_administration_panel_main .member_administration_panel .member_table_container tr, .member_administration_panel_main .member_administration_panel .member_table_container th, .member_administration_panel_main .member_administration_panel .member_table_container td {
+
+.member_table_container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: max-content;
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table horizontally */
+}
+
+th,
+td {
   padding: 15px;
   border: 2px solid #92b91f;
 }
-.member_administration_panel_main .member_administration_panel .member_table_container tbody tr:hover {
+
+tbody tr:hover {
   background-color: rgb(45, 47, 51);
   cursor: pointer;
 }
-.member_administration_panel_main .member_administration_panel .member_button_container {
+
+.member_button_container {
   margin-top: 40px;
   text-align: center;
   margin-bottom: 10px;
 }
-.member_administration_panel_main .member_administration_panel .member_button_container a {
+
+.member_button_container a {
   display: inline-block;
   font-size: 1.2rem;
   padding: 10px;
@@ -786,7 +832,8 @@ input[type=date]:focus::-webkit-datetime-edit {
   border-radius: 7px;
   transition: all 0.3s;
 }
-.member_administration_panel_main .member_administration_panel .member_button_container a:hover {
+
+.member_button_container a:hover {
   color: #92b91f;
   transform: translateY(5px);
 }
@@ -896,59 +943,6 @@ input[type=date]:focus::-webkit-datetime-edit {
   margin-right: 0;
 }
 
-.memberships_panel_main {
-  padding: 10px;
-  padding-bottom: 50px;
-}
-.memberships_panel_main .memberships_panel {
-  background-color: #222327;
-  padding: 20px;
-  margin: 0 auto;
-  width: fit-content;
-  border-radius: 7px;
-}
-.memberships_panel_main .memberships_panel .memberships_table_container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-}
-.memberships_panel_main .memberships_panel .memberships_table_container table,
-.memberships_panel_main .memberships_panel .memberships_table_container tr,
-.memberships_panel_main .memberships_panel .memberships_table_container th,
-.memberships_panel_main .memberships_panel .memberships_table_container td {
-  padding: 15px;
-  border: 2px solid #92b91f;
-}
-.memberships_panel_main .memberships_panel .memberships_table_container tbody tr:hover {
-  cursor: pointer;
-  background-color: rgb(45, 47, 51);
-}
-.memberships_panel_main .memberships_panel .memberships_table_container .active_column {
-  transition: all 0.5s;
-  cursor: pointer;
-}
-.memberships_panel_main .memberships_panel .memberships_table_container .active_column:hover {
-  background-color: rgb(161, 202, 37);
-}
-.memberships_panel_main .memberships_panel .memberships_button_container {
-  margin-top: 40px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.memberships_panel_main .memberships_panel .memberships_button_container a {
-  display: inline-block;
-  font-size: 1.2rem;
-  padding: 10px;
-  color: #fff;
-  border: 2px solid #92b91f;
-  transition: all 0.3s;
-  border-radius: 7px;
-}
-.memberships_panel_main .memberships_panel .memberships_button_container a:hover {
-  color: #92b91f;
-  transform: translateY(5px);
-}
 .memberships_panel_main .lds-dual-ring {
   display: inline-block;
   width: 10px;
@@ -973,15 +967,80 @@ input[type=date]:focus::-webkit-datetime-edit {
     transform: rotate(360deg);
   }
 }
-.memberships_panel_main .help_container {
+
+.memberships_panel_main {
+  padding: 10px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.memberships_panel {
+  background-color: #222327;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.memberships_table_container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  border: 2px solid #92b91f;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: rgb(45, 47, 51);
+}
+
+.active_column {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.active_column.active:hover {
+  background-color: rgb(161, 202, 37);
+}
+
+.help_container {
   margin-top: 10px;
   text-align: center;
 }
-.memberships_panel_main .help_container p {
+
+.help_container p {
   font-size: 0.9rem;
   font-weight: 600;
   margin-block: 10px;
   color: #92b91f;
+}
+
+.memberships_button_container {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.memberships_button_container a {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+
+.memberships_button_container a:hover {
+  color: #92b91f;
+  transform: translateY(5px);
 }
 
 .my_profile_panel_main .my_profile_container {
@@ -1068,8 +1127,33 @@ input[type=date]:focus::-webkit-datetime-edit {
   color: #92b91f;
   text-align: center;
 }
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container {
+  padding: 20px;
+  border-radius: 7px;
+  background-color: #222327;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .personal_payments_table_container .personal_payments_scroll {
+  overflow-x: auto;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .personal_payments_table_container .personal_payments_scroll table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* Center the table horizontally */
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .personal_payments_table_container .personal_payments_scroll th,
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .personal_payments_table_container .personal_payments_scroll td {
+  padding: 15px;
+  border: 2px solid #92b91f;
+}
+.my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .personal_payments_table_container .personal_payments_scroll tbody tr:hover {
+  background-color: rgb(45, 47, 51);
+  cursor: default;
+}
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .payment_button_container {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_payments_container_main .personal_payments_container .payment_button_container a {
   display: inline-block;
@@ -1116,6 +1200,7 @@ input[type=date]:focus::-webkit-datetime-edit {
 .finish_payment_subpage .finish_payment_main .payment_info {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .finish_payment_subpage .finish_payment_main .payment_info .payment_info_item {
   margin-bottom: 20px;
@@ -1131,7 +1216,90 @@ input[type=date]:focus::-webkit-datetime-edit {
   display: inline;
   font-size: 1.2rem;
 }
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item label {
+  color: #92b91f;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 5px;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=text],
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=password],
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=tel],
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=date],
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=number],
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #222327;
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=text]:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=password]:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=tel]:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=date]:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=number]:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item select:focus {
+  background-color: #737373;
+  outline: none;
+  color-scheme: dark;
+  transition: all 0.3s ease;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input:-webkit-autofill,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input:-webkit-autofill:hover,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input:-webkit-autofill:focus,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #222327 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  background-color: #737373;
+  transition: all 0.3s ease;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input::-webkit-outer-spin-button,
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.finish_payment_subpage .finish_payment_main .payment_confirmation_section .payment_confirmation_item input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.finish_payment_subpage .finish_payment_main form input[type=submit] {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #92b91f;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+.finish_payment_subpage .finish_payment_main form input[type=submit]:hover {
+  color: #92b91f;
+  transform: translateY(5px);
+  cursor: pointer;
+}
 
+@media screen and (max-width: 700px) {
+  .payment_confirmation_section {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
 .edit_user_container_main h1 {
   width: 100%;
   font-size: 2rem;
@@ -1270,6 +1438,29 @@ input[type=date]:focus::-webkit-datetime-edit {
   .txtnotes {
     grid-column: initial !important;
   }
+}
+.payments_panel_main .payments_container {
+  padding: 20px;
+  border-radius: 7px;
+  background-color: #222327;
+}
+.payments_panel_main .payments_container .payments_table_container .payments_scroll {
+  overflow-x: auto;
+}
+.payments_panel_main .payments_container .payments_table_container .payments_scroll table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* Center the table horizontally */
+}
+.payments_panel_main .payments_container .payments_table_container .payments_scroll th,
+.payments_panel_main .payments_container .payments_table_container .payments_scroll td {
+  padding: 15px;
+  border: 2px solid #92b91f;
+}
+.payments_panel_main .payments_container .payments_table_container .payments_scroll tbody tr:hover {
+  background-color: rgb(45, 47, 51);
+  cursor: default;
 }
 
 /*# sourceMappingURL=root.css.map */

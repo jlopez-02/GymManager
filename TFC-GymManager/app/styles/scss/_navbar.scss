@@ -1,5 +1,5 @@
 header nav{
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     right: 0;
@@ -7,7 +7,7 @@ header nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: transparent;
+    background: $bg-color-transparent;
     padding: 28px 12%;
     transition: all .5s ease;
   

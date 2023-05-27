@@ -120,62 +120,6 @@
 }
 
 .memberships_panel_main {
-  padding: 10px;
-  padding-bottom: 50px;
-
-  .memberships_panel {
-    background-color: $bg-color;
-    padding: 20px;
-    margin: 0 auto;
-    width: fit-content;
-    border-radius: 7px;
-    .memberships_table_container {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-
-      table,
-      tr,
-      th,
-      td {
-        padding: 15px;
-        border: 2px solid $main-color;
-      }
-
-      tbody tr:hover{
-        cursor: pointer;
-        background-color: $bg-3rd-color;
-      }
-
-      .active_column {
-        transition: all 0.5s;
-        cursor: pointer;
-        &:hover {
-          background-color: $main-secondary-color;
-        }
-      }
-    }
-
-    .memberships_button_container {
-      margin-top: 40px;
-      text-align: center;
-      margin-bottom: 10px;
-      a {
-        display: inline-block;
-        font-size: 1.2rem;
-        padding: 10px;
-        color: $text-color;
-        border: 2px solid $main-color;
-        transition: all 0.3s;
-        border-radius: 7px;
-        &:hover {
-          color: $main-color;
-          transform: translateY(5px);
-        }
-      }
-    }
-  }
 
   .lds-dual-ring {
     display: inline-block;
@@ -202,15 +146,79 @@
     }
   }
 
-  .help_container{
-    margin-top: 10px;
-    text-align: center;
-    p{
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-block: 10px;
-        color: $main-color;
-    }
-  }
+}
 
+.memberships_panel_main {
+  padding: 10px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.memberships_panel {
+  background-color: $bg-color;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.memberships_table_container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  border: 2px solid $main-color;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: $bg-3rd-color;
+}
+
+.active_column {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.active_column.active:hover {
+  background-color: $main-secondary-color;
+}
+
+.help_container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.help_container p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-block: 10px;
+  color: $main-color;
+}
+
+.memberships_button_container {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.memberships_button_container a {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  color: $text-color;
+  border: 2px solid $main-color;
+  transition: all 0.3s;
+  border-radius: 7px;
+}
+
+.memberships_button_container a:hover {
+  color: $main-color;
+  transform: translateY(5px);
 }

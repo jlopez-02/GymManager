@@ -13,7 +13,7 @@ class UserPaymentDAO
 
     public function list_payments_by_user(int $user_id) {
 
-        $sql = "Select * From user_payments Where user_id=? order by id desc";
+        $sql = "Select * From user_payments Where user_id=? AND payment_status = 1 order by id desc";
         if (!$stmt = $this->conn->prepare($sql)) {
             die("SQL ERROR " . $this->conn->error);
        }
@@ -29,6 +29,18 @@ class UserPaymentDAO
         }
 
         return $payment_list;
+    }
+    
+    public function list_payments() {
+        $sql = "SELECT * FROM user_payments Where payment_status = 1 order by id desc";
+        if (!$result = $this->conn->query($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $payments_array = array();
+        while ($payment = $result->fetch_object('UserPayment')) {
+            $payments_array[] = $payment;
+        }
+        return $payments_array;
     }
     
     public function create_payment(UserPayment $payment) {
@@ -62,6 +74,21 @@ class UserPaymentDAO
         $payment = $result->fetch_object('UserPayment');
 
         return $payment;
+    }
+    
+    public function update_payment_status(UserPayment $payment) {
+
+        $sql = "UPDATE user_payments SET payment_status = ? WHERE id = ?";
+        
+        if (!$stmt = $this->conn->prepare($sql)) {
+            die("SQL ERROR " . $this->conn->error);
+        }
+        $payment_status = $payment->getPayment_status();
+        $id = $payment->getId();
+        $stmt->bind_param('ii', $payment_status, $id);
+        $stmt->execute();
+
+        return $id;
     }
 
 

@@ -20,8 +20,23 @@
                 <label for="expiration_date">Fecha de finalización</label>
                 <h4><?= date('d/m/Y', strtotime($payment->getExpiration_date())) ?></h4>
             </div>
-
         </section>
+        <form action="index.php?action=my_profile&subpage=confirm_payment&new_payment_id=<?= $payment->getId() ?>" method="post">
+            <section class="payment_confirmation_section">
+                <div class="payment_confirmation_item">
+                    <label for="credit_card">Tarjeta de crédito</label>
+                    <input type="text">
+                </div>
+                <div class="payment_confirmation_item">
+                    <label for="cvv">CVV</label>
+                    <input type="text">
+                </div>
+            </section>
+            <div style="text-align: center;">
+                <input type="submit" value="Pagar ahora"/>
+            </div>
+            
+        </form>
 
     </div>
 

@@ -18,6 +18,12 @@ ob_start();
                 <li class="nav_item">
                     <a href="index.php?action=administrate&subpage=memberships" class="nav_link">Cuotas</a>
                 </li>
+                <li class="nav_item">
+                    <a href="index.php?action=administrate&subpage=payments" class="nav_link">Pagos</a>
+                </li>
+                <li class="nav_item">
+                    <a href="index.php?action=administrate&subpage=accesses" class="nav_link">Accesos</a>
+                </li>
             </ul>
         </div>
         

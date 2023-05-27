@@ -5,7 +5,8 @@ ob_start();
 ?>
 
 <div class="chief_control_panel_main">
-    <h1>Control de jefe</h1>
+    <h1>PÁGINA EN CONSTRUCCIÓN</h1>
+    <img src="app/assets/images/construction.png"/>
 </div>
 
 <?php

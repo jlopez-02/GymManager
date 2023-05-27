@@ -107,9 +107,38 @@
             .personal_payments_container_main {
 
                 .personal_payments_container {
+                    padding: 20px;
+                    border-radius: 7px;
+                    background-color: $bg-color;
+
+                    .personal_payments_table_container {
+                        .personal_payments_scroll {
+                            overflow-x: auto;
+
+                            table {
+                                text-align: center;
+                                border-collapse: collapse;
+                                margin: 0 auto;
+                                /* Center the table horizontally */
+                            }
+
+                            th,
+                            td {
+                                padding: 15px;
+                                border: 2px solid $main-color;
+                            }
+
+                            tbody tr:hover {
+                                background-color: $bg-3rd-color;
+                                cursor: default;
+                            }
+                        }
+                    }
 
                     .payment_button_container {
                         text-align: center;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
 
                         a {
                             display: inline-block;
@@ -166,7 +195,7 @@
 }
 
 .finish_payment_subpage {
-    
+
     padding-top: 30px;
 
     .finish_payment_main {
@@ -174,6 +203,7 @@
         .payment_info {
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
 
             .payment_info_item {
 
@@ -196,5 +226,111 @@
 
         }
 
+        .payment_confirmation_section {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5em;
+
+
+            .payment_confirmation_item {
+
+                label {
+                    color: $main-color;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    padding: 5px;
+                }
+
+                input[type=text],
+                input[type=password],
+                input[type=tel],
+                input[type=date],
+                input[type=number],
+                select {
+                    width: 100%;
+                    padding: 15px;
+                    margin: 5px 0 22px 0;
+                    display: inline-block;
+                    border: none;
+                    background: $bg-color;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    transition: all .3s ease;
+                }
+
+                input[type=text]:focus,
+                input[type=password]:focus,
+                input[type=tel]:focus,
+                input[type=date]:focus,
+                input[type=number]:focus,
+                select:focus {
+
+                    background-color: #737373;
+                    outline: none;
+                    color-scheme: dark;
+                    transition: all .3s ease;
+                }
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus,
+                input:-webkit-autofill:active {
+                    -webkit-box-shadow: 0 0 0 30px $bg-color inset !important;
+                    -webkit-text-fill-color: $text-color !important;
+                    background-color: #737373;
+                    transition: all .3s ease;
+
+                }
+
+
+                ::-webkit-calendar-picker-indicator {
+                    filter: invert(1);
+                }
+
+                /* Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Firefox */
+                input[type=number] {
+                    appearance: textfield;
+                    -moz-appearance: textfield;
+                }
+
+
+            }
+        }
+
+        form {
+            input[type='submit'] {
+                display: inline-block;
+                font-size: 1.2rem;
+                padding: 10px;
+                color: $text-color;
+                border: 2px solid $main-color;
+                transition: all 0.3s;
+                border-radius: 7px;
+
+
+                &:hover {
+                    color: $main-color;
+                    transform: translateY(5px);
+                    cursor: pointer;
+                }
+            }
+        }
+
     }
+}
+
+@media screen and (max-width: 700px) {
+
+    .payment_confirmation_section {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
 }
