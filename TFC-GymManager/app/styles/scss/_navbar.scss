@@ -15,6 +15,7 @@ header nav{
       display: flex;
       align-items: center;
     }
+    
   
     .app_logo{
       display: inline-block;
@@ -83,6 +84,14 @@ header nav{
       .nav_button_container:hover{
         display: flex;
       }
+    }
+  }
+
+  #access-icon{
+    color: white !important;
+    transition: 0.3s;
+    &:hover{
+      color: $main-color !important;
     }
   }
   

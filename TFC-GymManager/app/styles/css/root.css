@@ -75,6 +75,14 @@ header nav #nav_buttons .nav_button_container:hover {
   display: flex;
 }
 
+#access-icon {
+  color: white !important;
+  transition: 0.3s;
+}
+#access-icon:hover {
+  color: #92b91f !important;
+}
+
 @media screen and (max-width: 1405px) {
   #login-logo {
     display: none;

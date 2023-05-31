@@ -351,8 +351,9 @@ class MainController {
                     $session_user = new User();
                     $session_user = $USERDAO->user_search_by_id($_SESSION['user_id']);
                     
-                    if(isset($session_user) && $session_user->getRole() == 'user'){
-                        $session_user->setRole('client');
+                    if($session_user->getRole() == 'user'){
+                        $session_user->setRole('member');
+                        $USERDAO->update_role($session_user);
                     }
                 }
 

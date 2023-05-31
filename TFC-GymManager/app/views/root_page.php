@@ -131,15 +131,23 @@
                             <div class="nav_button_container">
                                 <a href="index.php?action=logout" class="nav_button">Cerrar Sesión</a>
                             </div>
+
+                            <?php if($session_user->getRole() != 'user'): ?>
+                                <div class="nav_button_container">
+                                    <a href="index.php?action=logout" class="nav_button" title="Entrar/Salir del Centro"><i id="access-icon" class="fa-solid fa-lock-open"></i></a>
+                                </div>
+                            <?php endif; ?>
+                            
                         
                         <?php else: ?>
                             <div class="nav_button_container">
-                                <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Login</a>
+                                <a href="index.php?action=login" class="nav_button"><i id="login-logo" class="fa-solid fa-user"></i> Iniciar Sesión</a>
                             </div>
 
                             <div class="nav_button_container">
-                                <a href="index.php?action=register" class="nav_button">Register</a>
+                                <a href="index.php?action=register" class="nav_button">Registrarse</a>
                             </div>
+                            
                         <?php endif; ?>
                         
                         
