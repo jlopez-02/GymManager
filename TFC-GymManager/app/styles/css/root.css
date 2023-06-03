@@ -1096,6 +1096,7 @@ tbody tr:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_image {
   width: 10%;
@@ -1113,20 +1114,23 @@ tbody tr:hover {
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
+  flex-wrap: wrap;
   text-align: left;
   margin-bottom: 10px;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info label {
   display: inline;
   padding-bottom: 5px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgb(161, 202, 37);
   opacity: 0.8;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container .user_info p {
   display: inline;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   padding: 15px;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .my_profile_panel_main .my_profile_container .my_profile_subpage_container .personal_information_container_main .personal_information_container h3 {
   margin-block: 20px;

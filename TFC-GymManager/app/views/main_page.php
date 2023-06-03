@@ -121,6 +121,13 @@ ob_start();
     <div>
         <a id="up_button" href="index.php#root"><i class="fa-solid fa-up-long"></i></a>
     </div>
+
+    <div id="aboutme_container">
+        <section id="aboutme_description">
+            <h1>¿Quien es el creador?</h1>
+        </section>
+        
+    </div>
 </div>
 
 <?php

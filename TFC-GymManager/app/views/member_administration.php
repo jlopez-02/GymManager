@@ -6,13 +6,12 @@
         <div class="member_table_container">
             <table>
                 <thead>
+                    <th>Usuario</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
-                    <th>Usuario</th>
                     <th>Email</th>
                     <th>Teléfono</th>
                     <th>Estado</th>
-                    <th>Última factura</th>
                 </thead>
 
                 <tbody>
@@ -24,9 +23,9 @@
                     ?>
                     
                         <tr data-id="<?= $member->getId() ?>">
+                            <td><?= $member->getUsername() ?></td>
                             <td><?= $member->getFirst_name()?></td>
                             <td><?= $member->getLast_name() ?></td>
-                            <td><?= $member->getUsername() ?></td>
                             <td><?= $member->getEmail()?></td>
                             <td><?= $member->getPhone_number()?></td>
                             <?php if($member->getActive() == 1): ?>
@@ -39,7 +38,6 @@
 
 
                             <?php endif;?>
-                            <td></td>
                         </tr>
                     
                     <?php } ?>

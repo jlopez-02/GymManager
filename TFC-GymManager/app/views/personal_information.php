@@ -12,6 +12,16 @@
         </div>
 
         <div class="user_info">
+            <label>Nombre de usuario</label>
+            <p><?= $session_user->getUsername() ?></p>
+        </div>
+        
+        <div class="user_info">
+            <label>Correo electrónico</label>
+            <p><?= $session_user->getEmail() ?></p>
+        </div>
+        
+        <div class="user_info">
             <label>Nombre</label>
             
             <p><?= $session_user->getFirst_name() ?></p>
@@ -38,20 +48,12 @@
         </div>
         
         <div class="user_info">
-            <label>Correo electrónico</label>
-            <p><?= $session_user->getEmail() ?></p>
-        </div>
-        
-        <div class="user_info">
-            <label>Nombre de usuario</label>
-            <p><?= $session_user->getUsername() ?></p>
+            <label>DNI</label>
+            <p><?= $session_user->getDni() ?></p>
         </div>
         
         <h3>*Para solicitar cualquier cambio en los datos contacte con el centro deportivo</h3>
 
-
     </div>
-
-
 
 </div>

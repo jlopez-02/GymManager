@@ -46,9 +46,11 @@ class MainController {
         $username = "";
         $email = "";
         $password = "";
+        $r_password = "";
         $phone_number = "";
         $gender = "";
         $date_of_birth = "";
+        $dni = "";
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $new_user = new User();
@@ -58,6 +60,7 @@ class MainController {
             $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+            $r_password = filter_var($_POST['r_password'], FILTER_SANITIZE_STRING);
             $phone_number = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
             $gender = filter_var($_POST['gender'], FILTER_SANITIZE_STRING);
             $date_of_birth = filter_var($_POST['date_of_birth'], FILTER_SANITIZE_STRING);
@@ -90,8 +93,18 @@ class MainController {
                 $error = true;
             }
             
+            if($password !== $r_password){
+                error_message::save_message("Las contraseñas no coinciden");
+                $error = true;
+            }
+            
             if (empty($phone_number)) {
                 error_message::save_message("Introduce tu número de telefono");
+                $error = true;
+            }
+            
+            if(strlen($phone_number) != 9){
+                error_message::save_message("El teléfono debe tener 9 dígitos");
                 $error = true;
             }
             
@@ -110,12 +123,22 @@ class MainController {
                 $error = true;
             }
             
+            if(strlen($dni) != 8){
+                error_message::save_message("El DNI debe tener 8 dígitos");
+                $error = true;
+            }
+            
             
             
             $USERDAO = new UserDAO(db_connection::connect());
             if ($USERDAO->user_search_by_email($email)) {
                 
                 error_message::save_message("Este email ya está en uso");
+                $error = true;
+            }
+            
+            if ($USERDAO->user_search_by_username($username)) {
+                error_message::save_message("Este nombre de usuario ya está en uso");
                 $error = true;
             }
             
@@ -179,6 +202,13 @@ class MainController {
                 $_SESSION['user_id'] = $login_user->getId();
                 $_SESSION['session_user'] = serialize($login_user);
                 
+                if($login_user->getRole() == 'admin' || $login_user->getRole() == 'chief'){
+                    $_SESSION['admin'] = true;
+                }else{
+                    $_SESSION['admin'] = false;
+                }
+                
+                
                 $uid = sha1(time() + rand()) . md5(time());
                 
                 $login_user->setUid($uid);
@@ -200,10 +230,11 @@ class MainController {
     }
     
     function logout() {
-        
         session_destroy();
         setcookie("uid","",0);
-        unset($_SESSION['username']); 
+        unset($_SESSION['username']);
+        unset($_SESSION['user_id']);
+        unset($_SESSION['admin']);
         header("Location: index.php");
     }
 

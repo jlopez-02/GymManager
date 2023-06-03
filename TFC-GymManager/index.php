@@ -23,21 +23,20 @@ require 'app/models/UserAccess/UserAccessDAO.php';
 
 
 $routes = array(
-    "home" => array("controller" => "MainController", "method" => "home", "public" => true),
-    "login" => array("controller" => "MainController", "method" => "login", "public" => true),
-    "register" => array("controller" => "MainController", "method" => "register", "public" => true),
-    "logout" => array("controller" => "MainController", "method" => "logout", "public" => false),
-    "administrate" => array("controller" => "MainController", "method" => "administrate", "public" => false),
-    "chief_control" => array("controller" => "MainController", "method" => "chief_control", "public" => false),
-    "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false),
-    "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
-    "active_switch" => array("controller" => "MainController", "method" => "active_switch", "public" => false),
-    "change_image" => array("controller" => "MainController", "method" => "change_image", "public" => false),
-    "access" => array("controller" => "MainController", "method" => "access", "public" => false),
-    "update_access_status" => array("controller" => "MainController", "method" => "update_access_status", "public" => false),
+    "home" => array("controller" => "MainController", "method" => "home", "public" => true, "admin" => false),
+    "login" => array("controller" => "MainController", "method" => "login", "public" => true, "admin" => false),
+    "register" => array("controller" => "MainController", "method" => "register", "public" => true, "admin" => false),
+    "logout" => array("controller" => "MainController", "method" => "logout", "public" => false, "admin" => false),
+    "administrate" => array("controller" => "MainController", "method" => "administrate", "public" => false, "admin" => true),
+    "chief_control" => array("controller" => "MainController", "method" => "chief_control", "public" => false, "admin" => true),
+    "my_profile" => array("controller" => "MainController", "method" => "my_profile", "public" => false, "admin" => false),
+    "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false, "admin" => true),
+    "active_switch" => array("controller" => "MainController", "method" => "active_switch", "public" => false, "admin" => true),
+    "change_image" => array("controller" => "MainController", "method" => "change_image", "public" => false, "admin" => true),
+    "access" => array("controller" => "MainController", "method" => "access", "public" => false, "admin" => false),
+    "update_access_status" => array("controller" => "MainController", "method" => "update_access_status", "public" => false, "admin" => false),
 );
 
-/* PARSEO DE LA RUTA */
 if (!isset($_GET['action'])) {
     $action = 'home';
 } else {
@@ -65,14 +64,18 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['uid'])) {
         
     }
 }
-/* CONTROL DE ACCESO MEDIANTE VARIABLES DE SESIÓN */
+
 if (!$routes[$action]["public"] && !isset($_SESSION['user_id'])) {
     error_message::save_message("Inicia sesión Primero");
     header("Location: index.php");
     die();
+}else{
+    if($routes[$action]["admin"] && $_SESSION['admin'] !== true){
+        error_message::save_message("No tienes permisos de administrador");
+        header("Location: index.php");
+        die();
+    }
 }
-
-/* EJECUTAMOS EL CONTROLADOR NECESARIO */
 
 $controller = $routes[$action]['controller'];
 $method = $routes[$action]['method'];

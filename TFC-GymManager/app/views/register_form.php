@@ -12,24 +12,17 @@ ob_start();
 
         <div class="form_container">
 
-
-            <div class="error_container_layout">
-                <div class="error_container"><?php error_message::show_message()?></div>
-                    
-            </div>
-
-
             <form class="access_form" method="post">
                 <div class="form_layout">
                     <div class="form_box">
                         <label for="username" class="form_label">Nombre de usuario</label>
-                        <input type="text" class="form_input" name="username" placeholder=" ">
+                        <input type="text" class="form_input" name="username" placeholder=" " value="<?= $username ?>">
                         
                     </div>
 
                     <div class="form_box">
                         <label for="email" class="form_label">Correo electrónico</label>
-                        <input type="text" class="form_input" name="email" placeholder=" ">
+                        <input type="text" class="form_input" name="email" placeholder=" " value="<?= $email ?>">
                         
                     </div>
 
@@ -37,7 +30,7 @@ ob_start();
                         <label for="password" class="form_label">Contraseña</label>
 
                         <div class="password_container">
-                            <input type="password" class="form_input" name="password" placeholder=" " id="register_password">
+                            <input type="password" class="form_input password_input" name="password" placeholder=" " id="register_password_input" value="<?= $password ?>">
                             <i class="fa-solid fa-eye" id="show_register_password"></i>
                         </div>
                         
@@ -47,8 +40,8 @@ ob_start();
                         <label for="r_password" class="form_label">Repetir contraseña</label>
 
                         <div class="password_container">
-                            <input type="password" class="form_input" name="r_password" placeholder=" " id="register_repeat_password">
-                            <i class="fa-solid fa-eye" id="show_register_repeat_password"></i>
+                            <input type="password" class="form_input password_input" name="r_password" placeholder=" " id="register_r_password_input" value="<?= $r_password ?>">
+                            <i class="fa-solid fa-eye" class="show_password" id="show_register_r_password"></i>
                         </div>
 
                     </div>
@@ -56,13 +49,13 @@ ob_start();
 
                     <div class="form_box">
                         <label for="first_name" class="form_label">Nombre</label>
-                        <input type="text" class="form_input" name="first_name" placeholder=" ">
+                        <input type="text" class="form_input" name="first_name" placeholder=" " value="<?= $first_name ?>">
                         
                     </div>
 
                     <div class="form_box">
                         <label for="last_name" class="form_label">Apellidos</label>
-                        <input type="text" class="form_input" name="last_name" placeholder=" ">
+                        <input type="text" class="form_input" name="last_name" placeholder=" " value="<?= $last_name ?>">
                         
                     </div>
 
@@ -70,7 +63,7 @@ ob_start();
 
                     <div class="form_box">
                         <label for="phone" class="form_label">Número de teléfono</label>
-                        <input type="tel" class="form_input" name="phone" placeholder=" ">
+                        <input type="tel" class="form_input" name="phone" placeholder=" " value="<?= $phone_number ?>">
                         
                     </div>
 
@@ -90,7 +83,7 @@ ob_start();
 
                     <div class="form_box">
                         <label for="dni" class="form_label">DNI (sin letra)</label>
-                        <input type="number" class="form_input" name="dni" placeholder=" ">
+                        <input type="number" class="form_input" name="dni" placeholder=" " value="<?= $dni ?>">
                     </div>
                 </div>
                 <div id="submit_button_container">

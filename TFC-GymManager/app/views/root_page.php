@@ -41,7 +41,7 @@
                     <div id="nav_menu">
                         <ul id="nav_list">
                             
-                            <?php if(isset($_SESSION['user_id'])): ?>
+                            <?php if(isset($_SESSION['user_id']) && isset($_SESSION['username'])): ?>
                              
                                 <?php
                                     $USERDAO = new UserDAO(db_connection::connect());
@@ -55,7 +55,7 @@
                                 ?>
                             
                                     <li class="nav_item">
-                                        <a href="index.php" class="nav_link">Inicio</a>
+                                        <a href="index.php#root" class="nav_link">Inicio</a>
                                     </li>
                                     <li class="nav_item">
                                         <a href="index.php?action=administrate" class="nav_link">Administración</a>
@@ -72,7 +72,7 @@
                             
                                 <?php } else if($session_user->getRole() == 'member'){ ?>
                                         <li class="nav_item">
-                                            <a href="index.php" class="nav_link">Inicio</a>
+                                            <a href="index.php#root" class="nav_link">Inicio</a>
                                         </li>
                                         <li class="nav_item">
                                             <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
@@ -81,11 +81,11 @@
                                             <a href="#" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="#" class="nav_link">Sobre Mi</a>
+                                            <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php }else{ ?>
                                         <li class="nav_item">
-                                            <a href="index.php" class="nav_link">Inicio</a>
+                                            <a href="index.php#root" class="nav_link">Inicio</a>
                                         </li>
                                         <li class="nav_item">
                                             <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
@@ -94,7 +94,7 @@
                                             <a href="index.php#plan_container" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="#" class="nav_link">Sobre Mi</a>
+                                            <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php } ?>
                                 
@@ -104,7 +104,7 @@
                             <?php else: ?>
                             
                                 <li class="nav_item">
-                                    <a href="index.php" class="nav_link">Inicio</a>
+                                    <a href="index.php#root" class="nav_link">Inicio</a>
                                 </li>
                                 <li class="nav_item">
                                     <a href="index.php#showcase_container" class="nav_link">Instalaciones</a>
@@ -113,7 +113,7 @@
                                     <a href="index.php#plan_container" class="nav_link">Precios</a>
                                 </li>
                                 <li class="nav_item">
-                                    <a href="#" class="nav_link">Sobre Mi</a>
+                                    <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
                                 </li>
                                 
                             <?php endif; ?>
@@ -122,7 +122,7 @@
                     </div>
 
                     <div id="nav_buttons">
-                        <?php if(isset($_SESSION['user_id'])): ?>
+                        <?php if(isset($_SESSION['user_id']) && isset($_SESSION['username']) ): ?>
                         
                             <div class="nav_button_container">
                                 <a href="index.php?action=my_profile" class="nav_button">Mi Perfil</a>

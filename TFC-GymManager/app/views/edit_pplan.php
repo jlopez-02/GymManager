@@ -1,10 +1,6 @@
 <div class="adm_form_main_container">
     <h1>Cuotas</h1>
     <div class="form_container">
-        <div class="error_container_layout">
-            <div class="error_container"><?php error_message::show_message()?></div>
-        </div>
-
 
         <form class="access_form" action="index.php?action=administrate&subpage=edit_pplan&plan_id=<?= $pplan->getId()?>" method="post">
             <div class="form_layout" id="login_form_layout">

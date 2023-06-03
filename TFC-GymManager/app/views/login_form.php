@@ -12,12 +12,6 @@ ob_start();
 
         <div class="form_container">
 
-
-            <div class="error_container_layout">
-                <div class="error_container"><?php error_message::show_message()?></div>
-            </div>
-
-
             <form class="access_form" action="index.php?action=login" method="post">
                 <div class="form_layout" id="login_form_layout">
                     <div class="form_box">
@@ -30,8 +24,8 @@ ob_start();
                         <label for="password" class="form_label">Contraseña</label>
 
                         <div class="password_container">
-                            <input type="password" class="form_input" name="login_password" placeholder=" " id="register_password">
-                            <i class="fa-solid fa-eye" id="show_register_password"></i>
+                            <input type="password" id="login_password_input" class="form_input" name="login_password" placeholder=" " >
+                            <i class="fa-solid fa-eye" id="show_login_password"></i>
                         </div>
                         
                     </div>
