@@ -134,7 +134,7 @@
 
                             <?php if($session_user->getRole() != 'user'): ?>
                                 <div class="nav_button_container">
-                                    <a href="index.php?action=logout" class="nav_button" title="Entrar/Salir del Centro"><i id="access-icon" class="fa-solid fa-lock-open"></i></a>
+                                    <a href="index.php?action=access" class="nav_button" title="Entrar/Salir del Centro"><i id="access-icon" class="fa-solid fa-lock-open"></i></a>
                                 </div>
                             <?php endif; ?>
                             

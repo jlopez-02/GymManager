@@ -3,7 +3,21 @@ $(document).ready(function () {
   init_edit_plan();
   init_edit_user();
   change_image();
+  load_access_button();
 });
+
+function load_access_button() {
+  $("#qr_button").click(function () { 
+    console.log("QR PULSADO");
+    create_access();
+  });
+}
+
+function create_access() {
+  const url = "index.php?action=update_access_status";
+  window.location.href = url;
+}
+
 
 function change_image() {
   $("#user_image_div").click(function () {

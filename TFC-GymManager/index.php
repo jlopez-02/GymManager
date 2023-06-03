@@ -18,6 +18,8 @@ require 'app/models/PayPlan/PayPlan.php';
 require 'app/models/PayPlan/PayPlanDAO.php';
 require 'app/models/UserPayments/UserPayment.php';
 require 'app/models/UserPayments/UserPaymentDAO.php';
+require 'app/models/UserAccess/UserAccess.php';
+require 'app/models/UserAccess/UserAccessDAO.php';
 
 
 $routes = array(
@@ -31,6 +33,8 @@ $routes = array(
     "member_administration" => array("controller" => "MainController", "method" => "member_administration", "public" => false),
     "active_switch" => array("controller" => "MainController", "method" => "active_switch", "public" => false),
     "change_image" => array("controller" => "MainController", "method" => "change_image", "public" => false),
+    "access" => array("controller" => "MainController", "method" => "access", "public" => false),
+    "update_access_status" => array("controller" => "MainController", "method" => "update_access_status", "public" => false),
 );
 
 /* PARSEO DE LA RUTA */

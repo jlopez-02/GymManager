@@ -1,6 +1,44 @@
 <?php
 
 class MainController {
+    
+    function access(){
+        $UACCESSDAO = new UserAccessDAO(db_connection::connect());
+        $last_access = $UACCESSDAO->last_user_access($_SESSION['user_id']);
+        $qrCodeImg = $this->createQR();
+        require 'app/views/register_access.php';
+    }
+    
+    function update_access_status(){
+        $UACCESSDAO = new UserAccessDAO(db_connection::connect());
+        $USERDAO = new UserDAO(db_connection::connect());
+        
+        $user_id = $_SESSION['user_id'];
+        
+        $last_access = $UACCESSDAO->last_user_access($user_id);
+        
+        $new_access = new UserAccess();
+        
+        $new_access->setUser_id($user_id); 
+        
+        if($last_access != null){
+            if($last_access->getType() == 'entrance'){
+                $new_access->setType('exit');
+            }else{
+                $new_access->setType('entrance');
+            }
+        }else{
+            $new_access->setType('entrance');
+        }
+        
+        $UACCESSDAO->create_access($new_access);
+        
+        header("Location: index.php?action=access");
+        exit();
+        
+    }
+
+
     function register(){
         
         $first_name = "";
@@ -214,6 +252,12 @@ class MainController {
                     $UPAYMENTDAO = new UserPaymentDAO(db_connection::connect());
                     $payment_list = $UPAYMENTDAO->list_payments();
                     $view_admin = 'app/views/all_payments.php';
+                    break;
+                case 'accesses':
+                    $UACCESSDAO = new UserAccessDAO(db_connection::connect());
+                    $USERDAO = new UserDAO(db_connection::connect());
+                    $accesses_list = $UACCESSDAO->list_accesses();
+                    $view_admin = 'app/views/all_accesses.php';
                     break;
                 default:
                     $USERDAO = new UserDAO(db_connection::connect());
@@ -611,5 +655,20 @@ class MainController {
         $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
         
         return $letters[$dni_module];
+    }
+    
+    function createQR(){
+        $data = "https://www.google.es/";
+
+        $baseURL = "https://chart.googleapis.com/chart"; 
+        $chartType = "qr"; 
+        $size = "300x300"; 
+
+
+        $requestURL = $baseURL . "?cht=" . $chartType . "&chs=" . $size . "&chl=" . urlencode($data);
+
+        $qrCodeImg = '<img src="' . $requestURL . '">';
+        
+        return $qrCodeImg;
     }
 }

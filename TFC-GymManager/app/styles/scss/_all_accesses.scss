@@ -1,0 +1,32 @@
+.accesses_panel_main {
+
+    .accesses_panel_container {
+        padding: 20px;
+        border-radius: 7px;
+        background-color: $bg-color;
+
+        .accesses_table_container {
+            .accesses_scroll {
+                overflow-x: auto;
+
+                table {
+                    text-align: center;
+                    border-collapse: collapse;
+                    margin: 0 auto;
+                    /* Center the table horizontally */
+                }
+
+                th,
+                td {
+                    padding: 15px;
+                    border: 2px solid $main-color;
+                }
+
+                tbody tr:hover {
+                    background-color: $bg-3rd-color;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

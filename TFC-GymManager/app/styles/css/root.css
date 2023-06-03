@@ -1471,4 +1471,73 @@ tbody tr:hover {
   cursor: default;
 }
 
+.register_access_main {
+  background-color: #121315;
+  padding: 20px;
+  border-radius: 7px;
+  padding-bottom: 60px;
+}
+.register_access_main .register_access_panel h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #92b91f;
+}
+.register_access_main .register_access_panel h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(161, 202, 37);
+  animation: breathing 5s ease-out infinite normal;
+}
+.register_access_main .register_access_panel i {
+  margin-top: 10px;
+  display: block;
+  color: rgb(161, 202, 37);
+}
+.register_access_main .register_access_panel .register_access_container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.register_access_main .register_access_panel .register_access_container .qr_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register_access_main .register_access_panel .register_access_container .qr_container img {
+  width: 200px;
+  height: 200px;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 4px solid white;
+}
+.register_access_main .register_access_panel .register_access_container .qr_container img:hover {
+  transform: translateY(5px);
+  border-color: rgb(120, 151, 26);
+}
+
+.accesses_panel_main .accesses_panel_container {
+  padding: 20px;
+  border-radius: 7px;
+  background-color: #222327;
+}
+.accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll {
+  overflow-x: auto;
+}
+.accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+  /* Center the table horizontally */
+}
+.accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll th,
+.accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll td {
+  padding: 15px;
+  border: 2px solid #92b91f;
+}
+.accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll tbody tr:hover {
+  background-color: rgb(45, 47, 51);
+  cursor: default;
+}
+
 /*# sourceMappingURL=root.css.map */
