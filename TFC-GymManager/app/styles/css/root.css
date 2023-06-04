@@ -279,7 +279,6 @@ input[type=date]:focus::-webkit-datetime-edit {
   width: 100%;
   padding: 50px;
   text-align: center;
-  padding-bottom: 300px;
 }
 #main_page_container hr {
   opacity: 0;
@@ -1542,6 +1541,124 @@ tbody tr:hover {
 .accesses_panel_main .accesses_panel_container .accesses_table_container .accesses_scroll tbody tr:hover {
   background-color: rgb(45, 47, 51);
   cursor: default;
+}
+
+#aboutme_container {
+  margin-top: 50px;
+}
+#aboutme_container #aboutme_personal_section {
+  max-width: 100%;
+  border-radius: 50px;
+}
+#aboutme_container #aboutme_personal_section h1 {
+  width: 100%;
+  display: inline-block;
+  font-size: 3rem;
+}
+#aboutme_container #aboutme_personal_section picture img {
+  max-width: 100%;
+  animation: breathing 3s ease-out infinite normal;
+}
+#aboutme_container #aboutme_personal_section #aboutme_description {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 100%;
+}
+#aboutme_container #aboutme_personal_section #aboutme_description #aboutme_description_text {
+  max-width: 60%;
+}
+#aboutme_container #aboutme_personal_section #aboutme_description #aboutme_description_text p {
+  margin-block: 10px;
+  width: 100%;
+  white-space: initial;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #fff;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 100%;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid {
+  padding: 20px;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  background: linear-gradient(315deg, #24252a, #1f2023);
+  box-shadow: -5px -5px 10px #17181b, 8px 8px 10px #2d2e33;
+  transition: 1s;
+  animation: moveCards 2s infinite;
+  margin-bottom: 40px;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .column-1 {
+  flex-basis: 40%;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .column-2 {
+  flex-basis: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .card_title,
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .card_description {
+  padding: 20px;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .card_title h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .card_title picture img {
+  padding: 20px;
+  border-radius: 150px;
+  background: linear-gradient(315deg, #92b91f, #1f2023);
+  box-shadow: -5px -5px 15px #0e0e10, 5px 5px 15px #36383e;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+#aboutme_container #aboutme_personal_section #aboutme_skills #aboutme_skills_grid .aboutme_card .card_description p {
+  margin-block: 10px;
+  width: 100%;
+  white-space: initial;
+  line-height: 1.5;
+  color: #fff;
+}
+
+#linkdin-logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: 1s;
+  cursor: pointer;
+}
+#linkdin-logo img:hover {
+  transform: scale(1.2);
+}
+
+#go_aboutme h1 {
+  color: #92b91f;
+}
+
+@keyframes moveCards {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=root.css.map */

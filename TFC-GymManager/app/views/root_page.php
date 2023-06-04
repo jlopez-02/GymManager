@@ -33,7 +33,7 @@
             <header id="root_header">
                 <nav id="nav_container">
                     <div id="logo-container">
-                        <a href="index.php" class="app_logo">
+                        <a href="index.php#root" class="app_logo">
                             S2Fitness
                         </a>
                     </div>
@@ -81,7 +81,7 @@
                                             <a href="#" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
+                                            <a href="index.php#go_aboutme" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php }else{ ?>
                                         <li class="nav_item">
@@ -94,7 +94,7 @@
                                             <a href="index.php#plan_container" class="nav_link">Precios</a>
                                         </li>
                                         <li class="nav_item">
-                                            <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
+                                            <a href="index.php#go_aboutme" class="nav_link">Sobre Mi</a>
                                         </li>
                                 <?php } ?>
                                 
@@ -113,7 +113,7 @@
                                     <a href="index.php#plan_container" class="nav_link">Precios</a>
                                 </li>
                                 <li class="nav_item">
-                                    <a href="index.php#aboutme_container" class="nav_link">Sobre Mi</a>
+                                    <a href="index.php#go_aboutme" class="nav_link">Sobre Mi</a>
                                 </li>
                                 
                             <?php endif; ?>
@@ -177,6 +177,7 @@
     </body>
     
     <!--Scripts-->
+    <script src="app/scripts/aboutme.js"></script>
     <script src="app/scripts/access_form.js"></script>
     <script src="app/scripts/popup.js"></script>
     <script src="app/scripts/main_page.js"></script>
@@ -184,4 +185,5 @@
     <script src="app/scripts/ajax_methods.js"></script>
     <script src="app/scripts/style.js"></script>
     <script src="app/scripts/swiper-bundle.min.js"></script>
+    
 </html>

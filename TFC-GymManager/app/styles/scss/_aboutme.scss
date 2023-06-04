@@ -1,5 +1,162 @@
-#aboutme_container{
+#aboutme_container {
 
-    #aboutme_description{
+    margin-top: 50px;
+    #aboutme_personal_section {
+        max-width: 100%;
+        border-radius: 50px;
+
+        h1 {
+            width: 100%;
+            display: inline-block;
+            font-size: 3rem;
+        }
+
+        picture {
+            img {
+                max-width: 100%;
+                animation: breathing 3s ease-out infinite normal;
+            }
+
+        }
+
+        #aboutme_description {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 100%;
+
+            #aboutme_description_text {
+                max-width: 60%;
+
+                p {
+                    margin-block: 10px;
+                    width: 100%;
+                    white-space: initial;
+                    line-height: 1.5;
+                    font-weight: 500;
+                    color: $text-color;
+
+                }
+
+            }
+
+
+        }
+
+        #aboutme_skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 100%;
+
+            #aboutme_skills_grid {
+
+                padding: 20px;
+
+                .aboutme_card {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    
+                    border-top-left-radius: 70px;
+                    border-bottom-right-radius: 70px;
+                    background: linear-gradient(315deg, #24252a, #1f2023);
+                    box-shadow: -5px -5px 10px #17181b,
+                        8px 8px 10px #2d2e33;
+                    
+                    transition: 1s;
+                    animation: moveCards 2s infinite;
+                    margin-bottom: 40px;
+                    .column-1 {
+
+                        flex-basis: 40%;
+                    }
+    
+                    .column-2 {
+                        flex-basis: 60%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+    
+                    .card_title,
+                    .card_description {
+                        padding: 20px;
+                    }
+    
+                    .card_title{
+                        h2 {
+                            font-weight: 600;
+                            font-size: 2rem;
+                            margin-bottom: 30px;
+                        }
+    
+                        picture img {
+                            padding: 20px;
+                            border-radius: 150px;
+                            background: linear-gradient(315deg, $main-color, #1f2023);
+                            box-shadow: -5px -5px 15px #0e0e10,
+                                5px 5px 15px #36383e;
+                            max-width: 200px;
+                            max-height: 200px;
+    
+                            object-fit: contain;
+                        }
+    
+                    } 
+                    .card_description{
+                        p{
+                            margin-block: 10px;
+                            width: 100%;
+                            white-space: initial;
+                            line-height: 1.5;
+                            
+                            color: $text-color;
+                        }
+                    }
+
+                }
+
+                
+            }
+
+        }
+
+    }
+    
+}
+
+#linkdin-logo{
+        
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        transition: 1s;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    
+}
+
+#go_aboutme{
+    h1{
+        color: $main-color;
     }
 }
+
+@keyframes moveCards {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
